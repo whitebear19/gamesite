@@ -20,7 +20,7 @@
                     <td>
                         <center>
                             <a href="http://i-oasis.fr" style="display: inline-block;">
-                                <img src="http://i-oasis.fr/public/assets/img/logo.png" style="width: 45px;height:50px;" alt="" srcset="">
+                                <img src="http://i-oasis.fr/public/assets/img/logo.png" style="width: 55px;height:65px;" alt="" srcset="">
                             </a>
                         </center>
                     </td>
@@ -39,21 +39,40 @@
                     </td>
                 </tr>   
                 <tr>
-                    <td style="padding: 0px 20px 0px 20px;">
-                        <p>
-                            <span style="color: black;font-size: 18px;">Please click the button below to verify your email address.</span>                            
-                        </p>                        
+                    <td style="padding: 0px 20px 0px 18px;">
+                        <center>
+                            <p>
+                                <span style="color: black;font-size: 18px;">Please click the button below to verify your email address.</span>                            
+                            </p>  
+                        </center>         
                     </td>
                 </tr>         
                 <tr>
                     <td style="padding: 0px 20px 0px 20px;">
                         <center>
-                            <a href="http://i-oasis.fr/{{ $id }}" style="display: inline-block;padding:5px 15px;border:1xp solid rgb(42, 7, 138);">
+                            <a href="http://i-oasis.fr/email/verify/{{ $id }}" style="display: inline-block;padding: 5px 15px;border: 1px solid #15c;text-decoration: none;border-radius: 5px;font-size: 16px;">
                                 Verify Email Address
                             </a>
                         </center>                                        
                     </td>
-                </tr>           
+                </tr>  
+                <tr>
+                    <td height="20px">
+                        
+                    </td>
+                </tr>        
+                <tr>
+                    <td style="padding: 0px 20px 0px 20px;">
+                        <p>
+                            <span style="color: black;font-size: 18px;">Regards</span>                            
+                        </p>  
+                    </td>
+                </tr>   
+                <tr>
+                    <td height="20px">
+                        
+                    </td>
+                </tr>         
             </tbody>
         </table>
 
