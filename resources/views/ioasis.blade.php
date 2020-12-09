@@ -126,7 +126,7 @@
                 </div>    
             </div>            
         </div>
-        <div class="section_journey section-common ioasis_common_section_back_col">
+        <div class="section_journey section-common ioasis_common_section_back_col" style="display: none;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">

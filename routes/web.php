@@ -19,6 +19,7 @@ Route::get('/apps', 'HomeController@apps')->name('apps');
 Route::get('/games', 'HomeController@games')->name('games');
 Route::get('/videos', 'HomeController@videos')->name('videos');
 Route::get('/i-oasis', 'HomeController@ioasis')->name('ioasis');
+Route::get('/library', 'HomeController@library')->name('library');
 Route::get('/game_detail/{game_id}', 'HomeController@game_detail')->name('game_detail');
 
 

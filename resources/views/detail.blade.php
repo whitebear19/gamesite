@@ -22,7 +22,7 @@
                                         <label for="">
                                             3 &nbsp;
                                         </label>
-                                        <img class="" style="width: 15px;" src="{{ asset('assets/img/Icon_rating_yellow_fill.svg') }}" alt="">
+                                        <img class="" style="width: 15px;" src="{{ asset('public/assets/img/Icon_rating_yellow_fill.svg') }}" alt="">
                                     </div>                                   
                                 </li>
                                 <li>
@@ -56,16 +56,16 @@
                                 $mainImages = json_decode($game->main_imgs);                        
                             @endphp 
 
-                            @for ($i = 0; $i < count($mainImages); $i++)
+                            @for ($i = 0; $i < count((array)$mainImages); $i++)
                                 <div class="carousel-item @if($i == 0) active @endif">
                                     <div class="">
                                         @php
                                             $ext =  explode('.', $mainImages[$i])
                                         @endphp
                                         @if ($ext[1] == 'avi' or $ext[1] == 'mp4')
-                                            <video class="d-block w-100" src="{{ asset('upload/game/'.$mainImages[$i]) }}" controls></video>
+                                            <video class="d-block w-100" src="{{ asset('public/upload/game/'.$mainImages[$i]) }}" controls></video>
                                         @else
-                                            <img src="{{ asset('upload/game/'.$mainImages[$i]) }}" class="d-block w-100" alt="...">
+                                            <img src="{{ asset('public/upload/game/'.$mainImages[$i]) }}" class="d-block w-100" alt="...">
                                         @endif
                                     </div>
                                 </div>
@@ -86,16 +86,16 @@
                         $subImages = json_decode($game->sub_imgs);                        
                     @endphp 
                     <section class="regular game_detail_info_img slider">
-                        @for ($i = 0; $i < count($subImages); $i++)                            
+                        @for ($i = 0; $i < count((array)$subImages); $i++)                            
                             <div class="">
                                 
                                 @php
                                     $ext =  explode('.', $subImages[$i])
                                 @endphp
                                 @if ($ext[1] == 'avi' or $ext[1] == 'mp4')
-                                    <video src="{{ asset('upload/game/'.$subImages[$i]) }}" autoplay></video>
+                                    <video src="{{ asset('public/upload/game/'.$subImages[$i]) }}" autoplay></video>
                                 @else
-                                    <img src="{{ asset('upload/game/'.$subImages[$i]) }}">
+                                    <img src="{{ asset('public/upload/game/'.$subImages[$i]) }}">
                                 @endif
                             </div>      
                         @endfor     
@@ -121,10 +121,10 @@
                             @endphp 
                         
                                 
-                            @for ($i = 0; $i < count($compatible_img); $i++)
+                            @for ($i = 0; $i < count((array)$compatible_img); $i++)
                                 <div class="d-inlineblock">
                                     <div class="compatible_item">
-                                        <img  src="{{ asset('upload/game/compatible/'.$compatible_img[$i]) }}" alt="">
+                                        <img  src="{{ asset('public/upload/game/compatible/'.$compatible_img[$i]) }}" alt="">
                                         <span>{{ $compatible_txt[$i] }}</span>
                                     </div>
                                 </div>            
@@ -241,7 +241,7 @@
                             <div class="comment_item">
                                 <div class="d-flex">
                                     <div class="w50px">
-                                        <img class="w-100" src="{{ asset('assets/img/avatar.png') }}" alt="">
+                                        <img class="w-100" src="{{ asset('public/assets/img/avatar.png') }}" alt="">
                                     </div>
                                     <div class="w-100 comment_content">
                                         <div class="user_info">
@@ -336,7 +336,7 @@
                         @endphp 
                        
                         <table>     
-                            @for ($i = 0; $i < count($language); $i++)
+                            @for ($i = 0; $i < count((array)$language); $i++)
                                 <tr>
                                     <td class="text-left">{{ $language[$i] }}</td>
                                     <td class="text-center">

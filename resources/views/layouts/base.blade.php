@@ -42,7 +42,15 @@
                 </li> 
                 <li class="nav-item @if($page == "videos") selected_menu @endif">
                     <a class="nav-link" target="blank" href="#">VIDEOS</a>
-                </li>           
+                </li>   
+                @auth
+                    @if (Auth::user()->role == "1") 
+                        <li class="nav-item @if($page == "library") selected_menu @endif">
+                            <a class="nav-link" href="{{ route('library') }}">LIBRARY</a>
+                        </li>     
+                    @endif                    
+                @endauth   
+                     
             </ul>   
             <div class="pos_rel">
                 <form class="form-inline my-2 my-lg-0">

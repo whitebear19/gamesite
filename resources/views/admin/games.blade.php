@@ -244,7 +244,7 @@
                                             <li class="upload_post_image_item">
                                               <div class="pos_rel game_img_wrap">
                                               <button type="button" class="btn_transparent btn_post_img_delete" data-value="{{ $mainImages[$i] }}"><i class="fa fa-times text-color-red"></i></button>
-                                              <img class="uploaded_game_image" src="{{ asset('upload/game/'.$mainImages[$i]) }}" alt="">
+                                              <img class="uploaded_game_image" src="{{ asset('public/upload/game/'.$mainImages[$i]) }}" alt="">
                                               </div>
                                               <input name="image_name[]" type="hidden" value="{{ $mainImages[$i] }}">
                                             </li>
@@ -277,7 +277,7 @@
                                             <li class="upload_post_image_item_sub">
                                               <div class="pos_rel game_img_wrap">
                                                 <button type="button" class="btn_transparent btn_post_img_delete_sub" data-value="{{ $subImages[$i] }}"><i class="fa fa-times text-color-red"></i></button>
-                                                <img class="uploaded_game_image" src="{{ asset('upload/game/'.$subImages[$i]) }}" alt="">
+                                                <img class="uploaded_game_image" src="{{ asset('public/upload/game/'.$subImages[$i]) }}" alt="">
                                               </div>
                                               <input name="image_name_sub[]" type="hidden" value="{{ $subImages[$i] }}">
                                             </li>

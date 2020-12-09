@@ -9,7 +9,7 @@
         </div>
         <div class="line text-right pos_rel">   
             <hr>         
-            <a href="{{ route('register') }}" class="auth_which">
+            <a href="{{ route('login') }}" class="auth_which">
                 Login
             </a>
         </div>
@@ -19,6 +19,27 @@
         <form method="POST" action="{{ route('register') }}">
         @csrf
             <div>
+                <div class="text-field">
+                    <label class="label">                   
+                        {{ __('You are a:') }}
+                    </label>
+                    <div class="input-base">                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="btn_radio_container">person
+                                    <input type="radio" name="type" value="1">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="btn_radio_container">company
+                                    <input type="radio" name="type" value="2">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="text-field">
                     <label class="label">                   
                         {{ __('Name') }}

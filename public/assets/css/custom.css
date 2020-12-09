@@ -895,6 +895,7 @@ table{
     border-radius: 2px;
     padding: 5px 20px;
 }
+
 /* ----------------Responsive--------------------------- */
 @media only screen and (max-width: 997px) {
     .site_logo {

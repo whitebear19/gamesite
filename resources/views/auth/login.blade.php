@@ -72,8 +72,11 @@
                         @enderror
                     </div>
                 </div>
-                <div class="text-center mt-20">
+                <div class="text-center mt-20 d-flex" style="justify-content: space-between;">
                     <button class="btn_auth">Login</button>
+                    <a href="{{ route('register') }}" class="">
+                        Create an account
+                    </a>
                 </div>
             </div>
         </form>
