@@ -62,13 +62,16 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {        
+    {    
         $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
         $enc_id = \Illuminate\Support\Facades\Crypt::encryptString($user->id);
-        return $user;  
+        // return $user;  
+        \Mail::to('bendan198242@gmail.com')->send(new \App\Mail\VerifyMail($enc_id));
+       
+        dd("Email is Sent.");
     }
 }
