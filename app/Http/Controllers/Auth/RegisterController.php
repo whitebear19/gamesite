@@ -38,6 +38,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $mail = '';
     }
 
     /**
@@ -66,11 +67,18 @@ class RegisterController extends Controller
         $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'type' => $data['type'],
+            'role' => '1',
             'password' => Hash::make($data['password']),
         ]);
+        $this->mail = $data['email'];
         $enc_id = \Illuminate\Support\Facades\Crypt::encryptString($user->id);
         // return $user;  
+<<<<<<< HEAD
         \Mail::to('bendan198242@gmail.com')->send(new \App\Mail\VerifyMail($enc_id));
+=======
+        \Mail::to($this->mail)->send(new \App\Mail\VerifyMail($enc_id));
+>>>>>>> 256223c0051a5961e48d46e82defc5f2e2ffd60e
        
         dd("Email is Sent.");
     }
