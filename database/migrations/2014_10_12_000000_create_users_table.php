@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('role')->nullable();
             $table->string('type')->nullable();
             $table->string('code')->nullable();
+            $table->string('paid')->nullable();
+            $table->timestamp('end_plan')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

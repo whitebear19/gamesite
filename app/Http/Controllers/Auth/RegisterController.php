@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/confirm';
 
     /**
      * Create a new controller instance.
@@ -73,13 +73,9 @@ class RegisterController extends Controller
         ]);
         $this->mail = $data['email'];
         $enc_id = \Illuminate\Support\Facades\Crypt::encryptString($user->id);
-        // return $user;  
-<<<<<<< HEAD
-        \Mail::to('bendan198242@gmail.com')->send(new \App\Mail\VerifyMail($enc_id));
-=======
-        \Mail::to($this->mail)->send(new \App\Mail\VerifyMail($enc_id));
->>>>>>> 256223c0051a5961e48d46e82defc5f2e2ffd60e
-       
-        dd("Email is Sent.");
+        
+        // \Mail::to($this->mail)->send(new \App\Mail\VerifyMail($enc_id));
+        return $user;  
+        
     }
 }

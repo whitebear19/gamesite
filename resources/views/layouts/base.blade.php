@@ -44,7 +44,7 @@
                     <a class="nav-link" target="blank" href="#">VIDEOS</a>
                 </li>   
                 @auth
-                    @if (Auth::user()->role == "1") 
+                    @if (Auth::user()->role == "1" && !empty(Auth::user()->email_verified_at)) 
                         <li class="nav-item @if($page == "library") selected_menu @endif">
                             <a class="nav-link" href="{{ route('library') }}">LIBRARY</a>
                         </li>     
@@ -94,6 +94,7 @@
             <div>
         </div>
     </nav>
+    
     <main class="">
         @yield('content')
     </main>

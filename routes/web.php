@@ -21,6 +21,9 @@ Route::get('/videos', 'HomeController@videos')->name('videos');
 Route::get('/i-oasis', 'HomeController@ioasis')->name('ioasis');
 Route::get('/library', 'HomeController@library')->name('library');
 Route::get('/game_detail/{game_id}', 'HomeController@game_detail')->name('game_detail');
+Route::get('/subscription', 'HomeController@subscription')->name('subscription')->middleware('auth');
+Route::get('/confirm', 'HomeController@confirm')->name('confirm')->middleware('auth');
+Route::get('/email/verify/{id}', 'HomeController@verify')->middleware('auth');
 
 
 Route::group(["middleware" => ["checkadmin"], "prefix" => "admin"], function() {
@@ -53,3 +56,5 @@ Route::post('/upload_oasisenjoy_img','AdminController@upload_oasisenjoy_img');
 
 Route::post('/store_compatible','AdminController@store_compatible');
 Route::get('/delete_compatible','AdminController@delete_compatible');
+Route::get('/resend_link','HomeController@resend_link');
+

@@ -845,7 +845,7 @@ table{
 }
 .section-common
 {
-    padding: 70px 0px 20px;
+    padding: 70px 0px 50px;
 }
 .membership_card {
     background: #2d2f3d;
@@ -855,6 +855,8 @@ table{
     display: inline-block;
     margin-left: 20px;
     margin-right: 20px;
+    border: 1px solid #d59516;
+    box-shadow: inset 0px 0px 5px 3px rgb(185 164 14 / 50%);
 }
 .membership_card_header{
     border-bottom: 1px solid #3e4152;
@@ -891,11 +893,37 @@ table{
 .btn_plan {
     background: #d59516 !important;
     color: #f2f4f8 !important;
-    border: 0 solid #d59516 !important;
+    border: 1px solid #d59516 !important;
     border-radius: 2px;
     padding: 5px 20px;
+    transition: 0.35s;
 }
-
+.btn_plan:hover{
+    background-color: transparent!important;
+}
+.pay_container .form-control{
+    background-color: transparent!important;
+    border-color: #d59516;
+    color: #e0e4eb;
+}
+.pay_container{
+    width: 650px;
+    margin: auto;
+}
+.section_pay{
+    display: none;
+}
+.btn_resend_link{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #007bff;
+    background-color: transparent;
+    transition: 0.35s;
+}
+.btn_resend_link:hover{
+    color: #09509c;
+}
 /* ----------------Responsive--------------------------- */
 @media only screen and (max-width: 997px) {
     .site_logo {
@@ -979,5 +1007,9 @@ table{
     }
     .inner_area_txt{
         font-size: 20px;
+    }
+    .pay_container{
+        width: 100%;
+        margin: auto;
     }
   }

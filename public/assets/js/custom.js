@@ -240,6 +240,26 @@ jQuery(function ($) {
       }); 
       
       
+      $(document).on('click','.btn_subscribe_now',function(){
+        
+        $(".section_plan").css("display","none");
+        $(".section_pay").fadeIn("slow");
+      });
+      $(document).on('click','.btn_resend_link',function(){
+        $("#loading").css("display","block"); 
+        $.ajax({
+          url: "/resend_link",          
+          dataType: "json",
+          type: "get",
+          success: function(data){ 
+              $("#loading").css("display","none"); 
+              location.reload();
+          }
+        });
+      });
+      
+
+
 
       $(document).on('click','.btn_clear_filter_condition',function(){
         var id=$(this).data('id');

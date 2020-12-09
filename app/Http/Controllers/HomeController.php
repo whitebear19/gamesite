@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 use App\Model\Game;
 use App\Model\MainCategory;
 use App\Model\SubCategory;
 use App\Model\Compatible;
 use App\Model\Setting;
+use App\User;
 class HomeController extends Controller
 {
     /**
@@ -17,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        
+        $mail = '';
     }
 
     /**
@@ -101,6 +102,32 @@ class HomeController extends Controller
         $page = "videos";
         return view('videos',compact('page'));
     }
+    public function subscription()
+    {
+        if(empty(Auth::user()->email_verified_at))
+        {   
+            return redirect(url('/confirm'));
+        }
+        else
+        {
+            $page = "";
+            return view('subscription',compact('page'));
+        }
+        
+    }
+    public function confirm(Request $request)
+    {
+        if(empty(Auth::user()->email_verified_at))
+        {               
+            $page = "";
+            return view('confirm',compact('page'));
+        }
+        else
+        {
+            return redirect(url('/'));
+        }
+        
+    }
     public function library(Request $request)
     {
         $page = "library";        
@@ -180,4 +207,34 @@ class HomeController extends Controller
             return redirect('/');
         }
     }
+
+    public function resend_link(Request $request)
+    {        
+        if (Auth::user()) 
+        {
+            $id = Auth::user()->id;
+            $this->mail = Auth::user()->email;
+            
+            // \Mail::to($this->mail)->send(new \App\Mail\VerifyMail($enc_id));
+            return response()->json(TRUE);
+        } else {
+            return response()->json(FALSE);
+        }
+    }
+    public function verify(Request $request,$id)
+    {        
+        $id = \Illuminate\Support\Facades\Crypt::decryptString($id);
+        $user = User::find($id);
+        if(!empty($user))
+        {
+            if(empty($user->email_verified_at))
+            {
+                $user->email_verified_at = date('Y-m-d H:i:s');
+                $user->save();
+                return redirect(url('/subscription'))->with("success","Your account has been verified successfully!");
+            }
+        }
+        return redirect(url('/'));
+    }
+    
 }
