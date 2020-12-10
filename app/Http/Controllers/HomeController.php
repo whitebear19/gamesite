@@ -227,7 +227,7 @@ class HomeController extends Controller
             $id = Auth::user()->id;
             $this->mail = Auth::user()->email;
             $enc_id = \Illuminate\Support\Facades\Crypt::encryptString($id);
-            // \Mail::to($this->mail)->send(new \App\Mail\VerifyMail($enc_id));
+            \Mail::to($this->mail)->send(new \App\Mail\VerifyMail($enc_id));
             return response()->json(TRUE);
         } else {
             return response()->json(FALSE);

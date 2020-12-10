@@ -74,7 +74,7 @@ class RegisterController extends Controller
         $this->mail = $data['email'];
         $enc_id = \Illuminate\Support\Facades\Crypt::encryptString($user->id);
         
-        // \Mail::to($this->mail)->send(new \App\Mail\VerifyMail($enc_id));
+        \Mail::to($this->mail)->send(new \App\Mail\VerifyMail($enc_id));
         return $user;  
         
     }
