@@ -69,7 +69,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarBasket">
                                     <div class="dropdown-item">
-                                        test
+                                        welcome
                                     </div>
                                     <div class="div_line"></div>
                                     <a class="dropdown-item" href="#">
