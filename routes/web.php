@@ -25,6 +25,10 @@ Route::get('/subscription', 'HomeController@subscription')->name('subscription')
 Route::get('/confirm', 'HomeController@confirm')->name('confirm')->middleware('auth');
 Route::get('/email/verify/{id}', 'HomeController@verify')->middleware('auth');
 
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
+Route::post('paypal', 'PayPalController@payment')->name('paypal.post');
+Route::get('paypal/cancel', 'PayPalController@cancel')->name('paypal.cancel');
+Route::get('paypal/success', 'PayPalController@success')->name('paypal.success');
 
 Route::group(["middleware" => ["checkadmin"], "prefix" => "admin"], function() {
     Route::get('/dashboard', 'AdminController@dashboard')->name('admin.dashboard');

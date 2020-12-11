@@ -130,46 +130,58 @@ class HomeController extends Controller
     }
     public function library(Request $request)
     {
-        $page = "library";        
-        $sort = $request->get('sort');        
-        $gid = $request->get('gid');
-        $hid = $request->get('hid');
-        
-        $games = new Game();
-        switch ($sort) {
-            case "az":
-                $games = $games->where('status','!=','99')->orderBy("title",'ASC');
-              break;
-            case "ph":                
-                $games = $games->where('status','!=','99')->orderBy("price",'DESC');
-              break;
-            case "pl":
-                $games = $games->where('status','!=','99')->orderBy("price",'ASC');
-              break;
-            default:
-                $games = $games->where('status','!=','99')->orderBy("title",'ASC');
-        }
-        if(!empty($gid))
+        if(empty(Auth::user()->email_verified_at))
         {
-            foreach($gid as $id)
-            {
-                $games = $games->where('cat_main',$id);
-            }
+            return redirect('/confirm');
         }
-        if(!empty($hid))
+        elseif(empty(Auth::user()->paid))
         {
-            foreach($hid as $id)
-            {
-                $com = '"'.$id.'"';   
-                $games = $games->where('compatible_with','like','%'.$com.'%');
-            }
+            return redirect('/subscription');
         }
-        
-        $games = $games->get();
-        
-        $category = MainCategory::all()->sortBy('name');        
-        $compatible = Compatible::all();
-        return view('library',compact('page','games','category','sort','compatible','gid','hid'));       
+        else
+        {
+            $page = "library";        
+            $sort = $request->get('sort');        
+            $gid = $request->get('gid');
+            $hid = $request->get('hid');
+            
+            $games = new Game();
+            switch ($sort) {
+                case "az":
+                    $games = $games->where('status','!=','99')->orderBy("title",'ASC');
+                break;
+                case "ph":                
+                    $games = $games->where('status','!=','99')->orderBy("price",'DESC');
+                break;
+                case "pl":
+                    $games = $games->where('status','!=','99')->orderBy("price",'ASC');
+                break;
+                default:
+                    $games = $games->where('status','!=','99')->orderBy("title",'ASC');
+            }
+            if(!empty($gid))
+            {
+                foreach($gid as $id)
+                {
+                    $games = $games->where('cat_main',$id);
+                }
+            }
+            if(!empty($hid))
+            {
+                foreach($hid as $id)
+                {
+                    $com = '"'.$id.'"';   
+                    $games = $games->where('compatible_with','like','%'.$com.'%');
+                }
+            }
+            
+            $games = $games->get();
+            
+            $category = MainCategory::all()->sortBy('name');        
+            $compatible = Compatible::all();
+            return view('library',compact('page','games','category','sort','compatible','gid','hid'));
+        }
+               
     }
     public function ioasis()
     {
@@ -214,7 +226,7 @@ class HomeController extends Controller
         {
             $id = Auth::user()->id;
             $this->mail = Auth::user()->email;
-            
+            $enc_id = \Illuminate\Support\Facades\Crypt::encryptString($id);
             // \Mail::to($this->mail)->send(new \App\Mail\VerifyMail($enc_id));
             return response()->json(TRUE);
         } else {

@@ -44,7 +44,7 @@
                     <a class="nav-link" target="blank" href="#">VIDEOS</a>
                 </li>   
                 @auth
-                    @if (Auth::user()->role == "1" && !empty(Auth::user()->email_verified_at)) 
+                    @if (Auth::user()->role == "1") 
                         <li class="nav-item @if($page == "library") selected_menu @endif">
                             <a class="nav-link" href="{{ route('library') }}">LIBRARY</a>
                         </li>     
@@ -55,9 +55,33 @@
             <div class="pos_rel">
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn_transparent" type="button"><i class="fas fa-search"></i></button>
+                    <button class="btn_transparent text-grey" type="button"><i class="fas fa-search"></i></button>
                 </form>
-            </div>     
+            </div>  
+            @if (Auth::check())
+                @if (Auth::user()->paid)
+                    <div>
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item dropdown">
+                                <a id="navbarBasket" class="nav-link dropdown-toggle fs-22" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fas fa-cart-plus"></i>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarBasket">
+                                    <div class="dropdown-item">
+                                        test
+                                    </div>
+                                    <div class="div_line"></div>
+                                    <a class="dropdown-item" href="#">
+                                        Check Out
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>   
+                @endif
+            @endif            
+            
             <div>                
                 <ul class="navbar-nav mr-auto">
                     @guest

@@ -239,11 +239,26 @@ jQuery(function ($) {
         $(".form_select_sortby").submit();       
       }); 
       
-      
+      $('.select_payment').on('change', function() {
+        var which = $(this).val();
+        if(which == "1")
+        {
+          $(".pay_stripe").css("display","none");
+          $(".pay_paypal").fadeIn("slow");
+        } 
+        else if(which == "2")
+        {
+          $(".pay_paypal").css("display","none");
+          $(".pay_stripe").fadeIn("slow");
+        }
+     });
       $(document).on('click','.btn_subscribe_now',function(){
         
         $(".section_plan").css("display","none");
         $(".section_pay").fadeIn("slow");
+        var price = $(this).data('price');
+        $(".pay_price").val(price);
+        $(".btn_pay_now_price").html(price);
       });
       $(document).on('click','.btn_resend_link',function(){
         $("#loading").css("display","block"); 

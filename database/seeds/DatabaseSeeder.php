@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@mail.com',
             'role' => '2',            
-            'type' => '1',            
+            'type' => '1',        
+            'email_verified_at' => date('Y-m-d H:i:s'),         
             'password' => Hash::make('admin1234'),
         ]);
 
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'user@mail.com',
             'role' => '1',  
             'type' => '1',            
+            'email_verified_at' => date('Y-m-d H:i:s'),            
             'password' => Hash::make('user1234'),
         ]);
         Setting::create([

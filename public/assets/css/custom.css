@@ -33,7 +33,7 @@ nav a:hover{
 .nav-item{position: relative;}
 main{
     background-color: #f4f6f8;
-    
+       
 }
 .bg-dark{
     background-color: #222222!important;
@@ -92,13 +92,16 @@ button{outline: none!important;box-shadow: none!important;}
     right: 0px;
     width: 150px;
     top: 50px;
+    background: #222222;
+    border: 1px solid #d59516;
+    padding:5px 0px 0px;
 }
 .dropdown-toggle::after {
     display: none;    
 }
 .nav-link{padding:0 1rem;}
 .navbar-nav .nav-item  .nav-link{
-    color: white;
+    color: #c7c7c7;
 }
 .selected_menu a{color: #00b3e3!important;font-weight: 600;}
 .selected_menu::after{
@@ -110,6 +113,20 @@ button{outline: none!important;box-shadow: none!important;}
     left: 0px;
     border: 1px solid #00b3e3;
     background-color: #00b3e3;
+}
+.dropdown-item {
+    color: #dedede;
+    transition: 0.5s;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #d59516!important;
+    text-decoration: none;
+    background-color: transparent;
+}
+.div_line{
+    height: 1px;
+    width: 100%;
+    background: #797979;
 }
 /* banner */
 
@@ -912,6 +929,10 @@ table{
 }
 .section_pay{
     display: none;
+    min-height: 250px;
+}
+.section_plan{
+    min-height: 250px;
 }
 .btn_resend_link{
     border: none;
@@ -924,6 +945,81 @@ table{
 .btn_resend_link:hover{
     color: #09509c;
 }
+.text-orange{
+    color: #d59516;
+}
+/* ----------------------------------------------------- */
+/* The container */
+.btn_radio_container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+  }
+  
+  /* Hide the browser's default radio button */
+  .btn_radio_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .btn_radio_container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .btn_radio_container input:checked ~ .checkmark {
+    background-color: #d59516;
+  }
+  
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the indicator (dot/circle) when checked */
+  .btn_radio_container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the indicator (dot/circle) */
+  .btn_radio_container .checkmark:after {
+      top: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: white;
+  }
+  .hide{
+      display: none;
+  }
+  .has-error .form-control{border-color: #e64141!important;}
+  .pay_paypal, .pay_stripe {
+      display: none;
+  }
 /* ----------------Responsive--------------------------- */
 @media only screen and (max-width: 997px) {
     .site_logo {

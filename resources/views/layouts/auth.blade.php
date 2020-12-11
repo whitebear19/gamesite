@@ -26,8 +26,8 @@
                         <a href="/">
                             <img class="auth_logo" src="{{ asset('public/assets/img/logo.png') }}" alt="">
                         </a>
-                        <h1 class="text-white fs-30 mt-10">IFFEN</h1>
-                        <p class="text-white mt-3">
+                        
+                        <p class="text-white mt-4">
                             Get The Most Out Of VR With INFINITY SUBSCRIBE NOW FOR:
                         </p>
                     </div>                    
