@@ -6,7 +6,7 @@
     <div class="container-fluid">
     
         <div class="row">
-            test
+            Here is company dashboard page.
         </div>
         
     </div>   
