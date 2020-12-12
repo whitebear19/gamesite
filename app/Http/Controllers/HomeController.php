@@ -152,45 +152,8 @@ class HomeController extends Controller
         else
         {
             $page = "library";        
-            $sort = $request->get('sort');        
-            $gid = $request->get('gid');
-            $hid = $request->get('hid');
-            
-            $games = new Game();
-            switch ($sort) {
-                case "az":
-                    $games = $games->where('status','!=','99')->orderBy("title",'ASC');
-                break;
-                case "ph":                
-                    $games = $games->where('status','!=','99')->orderBy("price",'DESC');
-                break;
-                case "pl":
-                    $games = $games->where('status','!=','99')->orderBy("price",'ASC');
-                break;
-                default:
-                    $games = $games->where('status','!=','99')->orderBy("title",'ASC');
-            }
-            if(!empty($gid))
-            {
-                foreach($gid as $id)
-                {
-                    $games = $games->where('cat_main',$id);
-                }
-            }
-            if(!empty($hid))
-            {
-                foreach($hid as $id)
-                {
-                    $com = '"'.$id.'"';   
-                    $games = $games->where('compatible_with','like','%'.$com.'%');
-                }
-            }
-            
-            $games = $games->get();
-            
-            $category = MainCategory::all()->sortBy('name');        
-            $compatible = Compatible::all();
-            return view('library',compact('page','games','category','sort','compatible','gid','hid'));
+            $games = GameCheck::where('user_id',Auth::user()->id)->where('paid','1')->get();
+            return view('library',compact('page','games'));
         }
                
     }

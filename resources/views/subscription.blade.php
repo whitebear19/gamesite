@@ -124,7 +124,7 @@
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="10"><span class="price">Subscribe Now</span> </button>
+                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-plan="20" data-price="10"><span class="price">Subscribe Now</span> </button>
                                         </div>
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="20"><span class="price">Subscribe Now</span> </button>
+                                            <button type="button" data-plan="50" class="btn btn_plan btn_subscribe_now" data-price="20"><span class="price">Subscribe Now</span> </button>
                                         </div>
                                     </div>
                                 </div>
@@ -188,7 +188,7 @@
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="30"><span class="price">Subscribe Now</span> </button>
+                                            <button type="button" data-plan="1000" class="btn btn_plan btn_subscribe_now" data-price="30"><span class="price">Subscribe Now</span> </button>
                                         </div>
                                     </div>
                                 </div>
@@ -213,10 +213,7 @@
                     <div class="col-md-12">
                         <div class="pay_container">
                             <div class="pay_header">
-                                {{-- <div class="d-flex" style="justify-content: space-between;">
-                                    <span class="text-white fs-24">Stripe</span>
-                                    <img src="{{ asset('public/assets/img/card.png') }}" style="width:165px;height:35px;" alt="">
-                                </div> --}}
+                                
                                 <h3 class="fs-20 mb-4 text-orange">Select Payment Method</h3>
                                 <label class="btn_radio_container">PayPal
                                     <input type="radio" class="select_payment" name="type" value="1">
@@ -269,6 +266,7 @@
                                         <button type="submit" class="btn btn_plan">Pay Now €<span class="btn_pay_now_price"></span></button>
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
+                                    <input type="hidden" value="" name="plan" class="pay_plan">
                                 </form>
                             </div>
                             <div class="pay_body pay_paypal mt-5">    
@@ -282,6 +280,7 @@
                                         <button type="submit" class="btn btn_plan">Pay Now €<span class="btn_pay_now_price"></span></button>
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
+                                    <input type="hidden" value="" name="plan" class="pay_plan">
                                 </form>
                             </div>
                         </div>

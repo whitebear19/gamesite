@@ -40,6 +40,7 @@ Route::group(["middleware" => ["checkadmin"], "prefix" => "admin"], function() {
 });
 Route::group(["middleware" => ["checkcompany"], "prefix" => "company"], function() {
     Route::get('/dashboard', 'CompanyController@dashboard')->name('company.dashboard');    
+    Route::get('/user', 'CompanyController@user')->name('company.user');    
 });
 // ajax---------------------------------------------------------------------------------------------------------//
 
@@ -68,5 +69,9 @@ Route::get('/resend_link','HomeController@resend_link');
 Route::get('/addcart','HomeController@addcart');
 Route::get('/get_addcart','HomeController@get_addcart');
 Route::get('/delete_addcart','HomeController@delete_addcart');
+
+
+Route::post('/create_user','CompanyController@create_user');
+
 
 

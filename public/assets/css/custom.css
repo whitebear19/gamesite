@@ -1083,6 +1083,14 @@ table{
     border: 1px solid #d59519;
     font-size: 16px;
 }
+/* library */
+.section_library{
+    min-height: 250px;
+    background: #c7c7c7;
+}
+thead td{font-weight: 600;}
+
+
 /* ----------------Responsive--------------------------- */
 @media only screen and (max-width: 997px) {
     .site_logo {

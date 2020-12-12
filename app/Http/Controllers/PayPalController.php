@@ -14,9 +14,11 @@ class PayPalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function __construct()
     {
         $this->middleware('auth');
+        $plan = '';
     }
 
     public function payment(Request $request)
@@ -38,7 +40,7 @@ class PayPalController extends Controller
         $data['return_url'] = route('paypal.success');
         $data['cancel_url'] = route('paypal.cancel');
         $data['total'] = $price;
-                
+        $this->plan = $request->get('plan');
         $provider = new ExpressCheckout;
   
         $response = $provider->setExpressCheckout($data);
@@ -71,6 +73,7 @@ class PayPalController extends Controller
         if (in_array(strtoupper($response['ACK']), ['SUCCESS', 'SUCCESSWITHWARNING'])) {
             $user = Auth::user();
             $user->paid = "1";
+            $user->company_plan = $this->plan;
             $user->save();    
             $rows = GameCheck::where('user_id',Auth::user()->id)->where('paid','0')->get();
             foreach($rows as $item)

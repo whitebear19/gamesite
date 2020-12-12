@@ -26,6 +26,7 @@
   <!-- summernote -->
   <link rel="stylesheet" href="{{ asset('public/admin/plugins/summernote/summernote-bs4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('public/assets/css/admincustom.css') }}">
+  <link rel="stylesheet" href="{{ asset('public/assets/css/companycustom.css') }}">
   <link rel="stylesheet" href="{{ asset('public/assets/css/accordian.css') }}">
   <link rel="stylesheet" href="{{ asset('public/assets/css/sumoselect.css') }}">
   <script src="https://kit.fontawesome.com/38c20fcb98.js" crossorigin="anonymous"></script>
@@ -92,7 +93,14 @@
               </p>
             </a>            
           </li>
-          
+          <li class="nav-item">
+            <a href="{{ route('company.user') }}" class="nav-link @if ($nav == 'user') active @endif">
+                <i class="nav-icon fas fa-user-plus"></i>
+              <p>
+                User                
+              </p>
+            </a>            
+          </li>
          
           
           <li class="nav-item">
@@ -160,9 +168,10 @@
 <script src="{{ asset('public/admin/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('public/admin/dist/js/pages/dashboard.js') }}"></script>
-
+<script src="{{ asset('public/assets/js/sweetalert2.js') }}"></script>
 <script src="{{ asset('public/assets/js/accordian.js') }}"></script>
 <script src="{{ asset('public/assets/js/custom.js') }}"></script>
+<script src="{{ asset('public/assets/js/company.custom.js') }}"></script>
 <script src="{{ asset('public/assets/js/jquery.sumoselect.js') }}"></script>
 
 </body>

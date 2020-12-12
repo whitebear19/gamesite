@@ -312,7 +312,9 @@ jQuery(function ($) {
         $(".section_plan").css("display","none");
         $(".section_pay").fadeIn("slow");
         var price = $(this).data('price');
+        var plan = $(this).data('plan');
         $(".pay_price").val(price);
+        $(".pay_plan").val(plan);
         $(".btn_pay_now_price").html(price);
       });
       $(document).on('click','.btn_resend_link',function(){
