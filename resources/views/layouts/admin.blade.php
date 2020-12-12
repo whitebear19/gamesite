@@ -193,6 +193,13 @@
 <script src="{{ asset('public/assets/js/accordian.js') }}"></script>
 <script src="{{ asset('public/assets/js/custom.js') }}"></script>
 <script src="{{ asset('public/assets/js/jquery.sumoselect.js') }}"></script>
-
+<script>
+  $(document).ready(function(){
+    window.asd = $('.SlectBox').SumoSelect({ csvDispCount: 3, selectAll:true, captionFormatAllSelected: "Yeah, OK, so everything." });
+    $('.SlectBox').on('sumo:opened', function(o) {
+      console.log("dropdown opened", o)
+    });
+  });
+</script>
 </body>
 </html>

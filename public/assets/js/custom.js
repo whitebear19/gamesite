@@ -21,10 +21,7 @@ jQuery(function ($) {
               contentRole: ['document', 'application', 'document'],
               slideSpeed: 400
             });  
-            // window.asd = $('.SlectBox').SumoSelect({ csvDispCount: 3, selectAll:true, captionFormatAllSelected: "Yeah, OK, so everything." });
-            // $('.SlectBox').on('sumo:opened', function(o) {
-            //   console.log("dropdown opened", o)
-            // });
+            
 
             $.ajax({
               url: "/get_addcart",              
