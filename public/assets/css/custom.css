@@ -117,6 +117,8 @@ button{outline: none!important;box-shadow: none!important;}
 .dropdown-item {
     color: #dedede;
     transition: 0.5s;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .dropdown-item:focus, .dropdown-item:hover {
     color: #d59516!important;
@@ -1020,6 +1022,67 @@ table{
   .pay_paypal, .pay_stripe {
       display: none;
   }
+
+  /* checkout */
+.checkout_warp
+{
+    background: #2d2f3d;
+    border-radius: 4px;
+    width: 500px;
+    color: white;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid #d59516;
+    box-shadow: inset 0px 0px 5px 3px rgb(185 164 14 / 50%);
+}
+.checkout_footer{
+    
+} 
+.checkout_body{
+    padding: 10px;
+    
+}   
+.checkout_body .game_item{
+    padding: 10px 40px 10px 10px;
+    text-align: left;
+    border: 1px solid #c7c7c7;
+    margin: 5px;
+}
+.checkout_body .game_item p{
+    margin: 0px;
+}
+.btn_delete_checkout_item{
+    color: #d05d5d;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: 0.35s;
+}
+.btn_delete_checkout_item:hover{
+    color: #e64141;
+}
+.item_price{
+    margin-right: 15px;
+    color: #d59516;
+    font-weight: 600;
+}
+.go_checkoutpage{
+    border-top: 1px solid #797979;
+}
+.count_addcart{
+    color: #c7c7c7;
+    position: absolute;
+    right: -5px;
+    top: -10px;
+    display: inline-block;
+    background: #d59516;
+    padding: 5px;
+    line-height: 10px;
+    border-radius: 15px;
+    border: 1px solid #d59519;
+    font-size: 16px;
+}
 /* ----------------Responsive--------------------------- */
 @media only screen and (max-width: 997px) {
     .site_logo {

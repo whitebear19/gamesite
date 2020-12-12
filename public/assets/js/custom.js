@@ -10,6 +10,7 @@ jQuery(function ($) {
 
     (function() {
         $(document).ready(function () {
+          
             'use strict';
     
             $(window).on('ariaAccordion.initialised', function (event, element) {
@@ -20,10 +21,67 @@ jQuery(function ($) {
               contentRole: ['document', 'application', 'document'],
               slideSpeed: 400
             });  
-            window.asd = $('.SlectBox').SumoSelect({ csvDispCount: 3, selectAll:true, captionFormatAllSelected: "Yeah, OK, so everything." });
-            $('.SlectBox').on('sumo:opened', function(o) {
-              console.log("dropdown opened", o)
-            });  
+            // window.asd = $('.SlectBox').SumoSelect({ csvDispCount: 3, selectAll:true, captionFormatAllSelected: "Yeah, OK, so everything." });
+            // $('.SlectBox').on('sumo:opened', function(o) {
+            //   console.log("dropdown opened", o)
+            // });
+
+            $.ajax({
+              url: "/get_addcart",              
+              dataType: "json",
+              type: "get",              
+              success: function(response){                 
+                 var data = response.results;
+                 if(data.length<1)
+                 {
+                    $(".go_checkoutpage").css("display","none");
+                    $(".count_addcart").css("display","none");
+                 }
+                 else
+                 {
+                   $(".count_addcart").html(data.length);
+                   var total = 0;
+                    for(var i=0;i<data.length;i++)
+                    {
+                      total += parseInt(data[i].price);
+                      var html = `
+                        <div class="dropdown-item addcart_item pos_rel">
+                          <span>${data[i].game}</span>
+                          <button data-id="${data[i].id}" class="btn_transparent btn_delete_checkout_item btn_delete_checkout_item_${data[i].id}" style="top:5px!important;">
+                              <i class="fas fa-times"></i>
+                          </button>
+                        </div>
+                      `;
+                      $(".addcart_list").prepend(html);
+                      if($(".where").val()=="1")
+                      {
+                        var html = `
+                          <div class="game_item pos_rel">
+                            <input type="hidden" value="${data[i].price}" class="item_price">
+                            <div class="d-flex">
+                              <div class="item_price">
+                                  <span>€${data[i].price}</span>
+                              </div>
+                              <div class="item_title">
+                                  <p>${data[i].game}</p>
+                              </div>
+                            </div>                                            
+                            <button data-id="${data[i].id}" class="btn_transparent btn_delete_checkout_item btn_delete_checkout_item_${data[i].id}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                          </div>
+                        `;
+                        $(".checkout_body").prepend(html);
+                      }
+                    }
+                    $(".btn_pay_addcart").attr('data-price',total);                    
+                    $("span.price").html(total);                    
+                    $(".empty_addCart").css("display","none");
+                 }
+
+              }
+          });         
+
         });
        
     }());
@@ -622,7 +680,92 @@ jQuery(function ($) {
         contentRole: ['document', 'application', 'document'],
         slideSpeed: 400
       });
+      $(document).on('click','.btn_addCart',function()
+      {      
+        
+        var count = parseInt($('.addcart_item').length);
+        var id = $(this).data('id');
+        $.ajax({
+          url: "/addcart",
+          data: {id:id},
+          dataType: "json",
+          type: "get",              
+          success: function(response){    
+            if(response.auth == "false")             
+            {
+              swal({
+                title: "You are not login!",  
+                text: "Please login.",                          
+                type: "error"
+              }).then(function() {
+                  location.reload();
+              });
+            }
+            else if(response.result == "true")
+            {
+              var game = response.game;
+              var html = `
+                <div class="dropdown-item addcart_item pos_rel">
+                  <span>${game.title}</span>
+                  <button data-id="${response.id}" class="btn_transparent btn_delete_checkout_item btn_delete_checkout_item_${response.id}" style="top:5px!important;">
+                      <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              `;
+              $(".addcart_list").prepend(html);
+              
+              $(".go_checkoutpage").css("display","block");
+              $(".empty_addCart").css("display","none");
+              $(".count_addcart").html(count+1);
+              $(".count_addcart").css("display","block");
+              
+            }            
+          }
+        });         
+
+        
+      });  
+      $(document).on('click','.btn_delete_checkout_item',function()
+      {      
+        
+        var id = $(this).data('id');
+        $(".btn_delete_checkout_item_"+id).parent().remove();
+        $(".count_addcart").html($('.addcart_item').length);
+        var total = 0;
+        $("input.item_price").each(function(){
+          total+=parseInt($(this).val());          
+        });
+        $(".btn_pay_addcart").attr('data-price',total); 
+        $("span.price").html(total); 
+
+        if($('.addcart_item').length<1)
+        {
+          $(".go_checkoutpage").css("display","none");
+          $(".empty_addCart").css("display","block");
+          $(".count_addcart").css("display","none");
+          if($(".where").val()=="1")
+          {            
+            var cur_url = window.location.href.replace('checkout', '');                       
+            window.location.replace(cur_url);
+          }
+        }
+        $.ajax({
+          url: "/delete_addcart",
+          data: {id:id},
+          dataType: "json",
+          type: "get",              
+          success: function(response){    
+            if(response.auth == "false")             
+            {              
+              location.reload();              
+            }            
+          }
+        });         
+
+        
+      });  
       
+
   }());
  
 

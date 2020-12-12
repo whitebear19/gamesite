@@ -96,6 +96,102 @@
                                     </div>
                                 </div>
                             @elseif(Auth::user()->type == '2')
+                                <div class="membership_card mt-2">
+                                    <div class="membership_card_header">
+                                        I-Oasis Mensual
+                                    </div>
+                                    <div class="membership_card_body">
+                                        <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
+                                            <div class="subscription-plan__price">
+                                                <h2 class="subscription-plan__price--primary">
+                                                    <b>
+                                                        <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
+                                                            <span class="price-container price-final_price tax weee">
+                                                                <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
+                                                                    <span class="price">€10</span>
+                                                                </span> 
+                                                            </span> 
+                                                        </div>
+                                                    </b> 
+                                                    <sup>/Month</sup>
+                                                </h2>
+                                                <h3 class="subscription-plan__price--secondary">
+                                                    <p style="text-align: left; padding: 10px 10px 0px 10px;">
+                                                        <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
+                                                        <span class="memebership_item_text">Pack 20 logins </span>
+                                                    </p>                                   
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-3 mb-3">
+                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="10"><span class="price">Subscribe Now</span> </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="membership_card mt-2">
+                                    <div class="membership_card_header">
+                                        I-Oasis Mensual
+                                    </div>
+                                    <div class="membership_card_body">
+                                        <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
+                                            <div class="subscription-plan__price">
+                                                <h2 class="subscription-plan__price--primary">
+                                                    <b>
+                                                        <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
+                                                            <span class="price-container price-final_price tax weee">
+                                                                <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
+                                                                    <span class="price">€20</span>
+                                                                </span> 
+                                                            </span> 
+                                                        </div>
+                                                    </b> 
+                                                    <sup>/Month</sup>
+                                                </h2>
+                                                <h3 class="subscription-plan__price--secondary">
+                                                    <p style="text-align: left; padding: 10px 10px 0px 10px;">
+                                                        <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
+                                                        <span class="memebership_item_text">Pack 50 logins </span>
+                                                    </p>                                   
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-3 mb-3">
+                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="20"><span class="price">Subscribe Now</span> </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="membership_card mt-2">
+                                    <div class="membership_card_header">
+                                        I-Oasis Mensual
+                                    </div>
+                                    <div class="membership_card_body">
+                                        <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
+                                            <div class="subscription-plan__price">
+                                                <h2 class="subscription-plan__price--primary">
+                                                    <b>
+                                                        <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
+                                                            <span class="price-container price-final_price tax weee">
+                                                                <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
+                                                                    <span class="price">€30</span>
+                                                                </span> 
+                                                            </span> 
+                                                        </div>
+                                                    </b> 
+                                                    <sup>/Month</sup>
+                                                </h2>
+                                                <h3 class="subscription-plan__price--secondary">
+                                                    <p style="text-align: left; padding: 10px 10px 0px 10px;">
+                                                        <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
+                                                        <span class="memebership_item_text">Pack unlimited logins</span>
+                                                    </p>                                   
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-3 mb-3">
+                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="30"><span class="price">Subscribe Now</span> </button>
+                                        </div>
+                                    </div>
+                                </div>
                             @endif
                         </div>
                     </div>                   

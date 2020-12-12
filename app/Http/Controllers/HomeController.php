@@ -8,6 +8,7 @@ use App\Model\MainCategory;
 use App\Model\SubCategory;
 use App\Model\Compatible;
 use App\Model\Setting;
+use App\Model\GameCheck;
 use App\User;
 class HomeController extends Controller
 {
@@ -125,9 +126,19 @@ class HomeController extends Controller
         else
         {
             return redirect(url('/'));
-        }
-        
+        }        
     }
+    public function checkout(Request $request)
+    {
+        $rows = GameCheck::where('user_id',Auth::user()->id)->where('paid','0')->count();
+        if($rows<1)
+        {
+            return redirect('/');
+        }
+        $page = "";
+        return view('checkout',compact('page'));
+    }
+    
     public function library(Request $request)
     {
         if(empty(Auth::user()->email_verified_at))
@@ -249,4 +260,71 @@ class HomeController extends Controller
         return redirect(url('/'));
     }
     
+    public function addcart(Request $request)
+    {
+        if(Auth::check())
+        {
+            $id = $request->get('id');
+            $row = GameCheck::create([
+                'game_id' => $id,
+                'user_id' => Auth::user()->id,
+                'paid'    => '0',
+            ]);
+            return response()->json([
+                'result' => 'true',
+                'game'   => Game::find($id),
+                'id'     => $row->id,
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'auth' => 'false'
+            ]);
+        }
+    }
+
+    public function get_addcart(Request $request)
+    {
+        $results = array();
+        if(Auth::check())
+        {
+            $rows = GameCheck::where('user_id',Auth::user()->id)->where('paid','0')->get();
+            foreach($rows as $item)
+            {
+                $one = array();
+                $one['id'] = $item->id;
+                $one['game'] = Game::find($item->game_id)->title;
+                $one['price'] = Game::find($item->game_id)->price;
+                array_push($results,$one);
+            }
+            return response()->json([
+                'results' => $results
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'results' => $results
+            ]);
+        }
+    }
+    public function delete_addcart(Request $request)
+    {
+        if(Auth::check())
+        {
+            $id = $request->get('id');
+            $row = GameCheck::find($id);
+            $row->delete();
+            return response()->json([
+                'result' => 'true'
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'auth' => 'false'
+            ]);
+        }
+    }    
 }

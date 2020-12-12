@@ -20,6 +20,7 @@ Route::get('/games', 'HomeController@games')->name('games');
 Route::get('/videos', 'HomeController@videos')->name('videos');
 Route::get('/i-oasis', 'HomeController@ioasis')->name('ioasis');
 Route::get('/library', 'HomeController@library')->name('library');
+Route::get('/checkout', 'HomeController@checkout')->name('checkout')->middleware('auth');
 Route::get('/game_detail/{game_id}', 'HomeController@game_detail')->name('game_detail');
 Route::get('/subscription', 'HomeController@subscription')->name('subscription')->middleware('auth');
 Route::get('/confirm', 'HomeController@confirm')->name('confirm')->middleware('auth');
@@ -37,7 +38,9 @@ Route::group(["middleware" => ["checkadmin"], "prefix" => "admin"], function() {
     Route::get('/compatible', 'AdminController@compatible')->name('admin.compatible');
     Route::get('/oasis', 'AdminController@oasis')->name('admin.oasis');
 });
-
+Route::group(["middleware" => ["checkcompany"], "prefix" => "company"], function() {
+    Route::get('/dashboard', 'CompanyController@dashboard')->name('company.dashboard');    
+});
 // ajax---------------------------------------------------------------------------------------------------------//
 
 Route::post('/postimgupload','AdminController@postimgupload');
@@ -61,4 +64,9 @@ Route::post('/upload_oasisenjoy_img','AdminController@upload_oasisenjoy_img');
 Route::post('/store_compatible','AdminController@store_compatible');
 Route::get('/delete_compatible','AdminController@delete_compatible');
 Route::get('/resend_link','HomeController@resend_link');
+
+Route::get('/addcart','HomeController@addcart');
+Route::get('/get_addcart','HomeController@get_addcart');
+Route::get('/delete_addcart','HomeController@delete_addcart');
+
 

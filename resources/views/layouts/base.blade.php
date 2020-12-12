@@ -9,11 +9,12 @@
     <link rel="stylesheet" href="{{ asset('public/assets/css/accordian.css') }}">    
     <link rel="stylesheet" href="{{ asset('public/assets/vendor/slick/slick.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendor/slick/slick-theme.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/slick.css') }}">   
     <script src="{{ asset('public/assets/js/jquery.min.js') }}"></script>
     <script src="{{ asset('public/assets/js/bootstrap.min.js') }}"></script>   
     <script src="{{ asset('public/assets/js/accordian.js') }}"></script>       
     <script src="{{ asset('public/assets/js/slick.js') }}"></script>   
+    <script src="{{ asset('public/assets/js/sweetalert2.js') }}"></script>
     <script src="{{ asset('public/assets/js/custom.js') }}"></script>   
     <script src="{{ asset('public/assets/js/autosize.js') }}"></script>   
     <script src="https://kit.fontawesome.com/38c20fcb98.js" crossorigin="anonymous"></script>
@@ -62,18 +63,19 @@
                 @if (Auth::user()->paid)
                     <div>
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown pos_rel">
                                 <a id="navbarBasket" class="nav-link dropdown-toggle fs-22" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     <i class="fas fa-cart-plus"></i>
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarBasket">
-                                    <div class="dropdown-item">
-                                        welcome
-                                    </div>
-                                    <div class="div_line"></div>
-                                    <a class="dropdown-item" href="#">
+                                <span class="count_addcart">
+                                    
+                                </span>
+                                <div class="dropdown-menu addcart_list dropdown-menu-right" aria-labelledby="navbarBasket">
+                                    <a class="dropdown-item go_checkoutpage" href="{{ route('checkout') }}">
                                         Check Out
+                                    </a>
+                                    <a class="dropdown-item empty_addCart" href="#">
+                                        Empty add cart.
                                     </a>
                                 </div>
                             </li>
@@ -97,7 +99,12 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                                 @if (Auth::user()->role == "2") 
-                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
+                                        {{ __('Dashboard') }}
+                                    </a>
+                                @endif
+                                @if (Auth::user()->type == "2") 
+                                    <a class="dropdown-item" href="{{ route('company.dashboard') }}">
                                         {{ __('Dashboard') }}
                                     </a>
                                 @endif

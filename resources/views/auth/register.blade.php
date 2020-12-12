@@ -27,7 +27,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="btn_radio_container">person
-                                    <input type="radio" name="type" value="1">
+                                    <input type="radio" name="type" checked value="1">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>

@@ -7,6 +7,7 @@ use Session;
 use Stripe;
 use Auth;
 use App\User;
+use App\Model\GameCheck;
 
 class StripePaymentController extends Controller
 {
@@ -31,8 +32,14 @@ class StripePaymentController extends Controller
                 $user = Auth::user();
                 $user->paid = "1";
                 $user->save();    
+                $rows = GameCheck::where('user_id',Auth::user()->id)->where('paid','0')->get();
+                foreach($rows as $item)
+                {
+                    $item->paid="1";
+                    $item->save();
+                }
                 Session::flash('success', 'Payment successful!');      
-                return back();
+                return redirect('/');
             }
             else
             {

@@ -2,6 +2,18 @@
 
 @section('content')
 <div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @if(session('success'))    
+                    <div class="alert alert-success alert-dismissible login_success_alert" role="alert" style="width:450px;margin:auto;">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <span>{{ session('success') }}</span>
+                    </div>  
+                @endif
+            </div>
+        </div>
+    </div>
     @if ($banners)
         <div class="banner">        
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -272,7 +284,7 @@
                                                 </a>
                                                 <div class="actions-primary d-flex h-50p">
                                                     <div class="w-50 pos_rel">
-                                                        <button class="btn_price" data-price="{{ $item->price }}">
+                                                        <button class="btn_price btn_addCart" data-id="{{ $item->id }}" data-price="{{ $item->price }}">
                                                             €{{ $item->price }}
                                                         </button>
                                                     </div>

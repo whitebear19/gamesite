@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\ExpressCheckout;
 use Auth;
 use App\User;
-
+use App\Model\GameCheck;
 class PayPalController extends Controller
 {
     /**
@@ -72,8 +72,14 @@ class PayPalController extends Controller
             $user = Auth::user();
             $user->paid = "1";
             $user->save();    
+            $rows = GameCheck::where('user_id',Auth::user()->id)->where('paid','0')->get();
+            foreach($rows as $item)
+            {
+                $item->paid="1";
+                $item->save();
+            }
             Session::flash('success', 'Payment successful!');      
-            return back();
+            return redirect('/');
         }
         Session::flash('success', 'Something wrong. please try again!'); 
         return redirect('/subscription');
