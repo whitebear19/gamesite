@@ -37,6 +37,18 @@
                                                                    
                                 </div>
                             @elseif(Auth::user()->type == '2')
+                                <div class="checkout_warp mt-2">                                     
+                                        
+                                    <div class="checkout_body">
+                                                                    
+                                    </div>
+                                    <div class="checkout_footer">
+                                        <div class="text-center mt-3 mb-3">
+                                            <button type="button" class="btn btn_plan btn_subscribe_now btn_pay_addcart" data-price="0">Pay Now €<span class="price"></span> </button>
+                                        </div>    
+                                    </div>
+                                                                
+                                </div>
                             @endif
                         </div>
                     </div>                   
