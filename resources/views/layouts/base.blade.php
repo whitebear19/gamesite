@@ -33,16 +33,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item @if($page == "home") selected_menu @endif">
-                    <a class="nav-link" href="/">Home </a>
+                    <a class="nav-link" href="{{ route('home') }}">Home </a>
                 </li>                
                 <li class="nav-item @if($page == "ioasis") selected_menu @endif">
-                    <a class="nav-link" href="{{ route('ioasis') }}">I-OASIS </a>
+                    <a class="nav-link" href="{{ route('ioasis') }}">i-Oasis </a>
                 </li>
                 <li class="nav-item @if($page == "games") selected_menu @endif">
                     <a class="nav-link" href="{{ route('games') }}">Serious Games</a>
                 </li> 
                 <li class="nav-item @if($page == "videos") selected_menu @endif">
-                    <a class="nav-link" target="blank" href="#">VIDEOS</a>
+                    <a class="nav-link" target="blank" href="#">Videos</a>
                 </li>   
                 @auth
                     @if (Auth::user()->role == "1") 

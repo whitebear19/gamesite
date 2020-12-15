@@ -14,7 +14,8 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@ioasis')->name('ioasis');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/apps', 'HomeController@apps')->name('apps');
 Route::get('/games', 'HomeController@games')->name('games');
 Route::get('/videos', 'HomeController@videos')->name('videos');
