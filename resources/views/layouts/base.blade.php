@@ -39,7 +39,7 @@
                     <a class="nav-link" href="{{ route('ioasis') }}">i-Oasis </a>
                 </li>
                 <li class="nav-item @if($page == "games") selected_menu @endif">
-                    <a class="nav-link" href="{{ route('games') }}">Serious Games</a>
+                    <a class="nav-link" href="{{ route('games') }}">Training</a>
                 </li> 
                 <li class="nav-item @if($page == "videos") selected_menu @endif">
                     <a class="nav-link" target="blank" href="#">Videos</a>
