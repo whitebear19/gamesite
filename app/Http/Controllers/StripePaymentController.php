@@ -51,7 +51,7 @@ class StripePaymentController extends Controller
                     $item->save();
                 }
                 Session::flash('success', 'Payment successful!');      
-                return redirect('/');
+                return redirect('/library');
             }
             else
             {

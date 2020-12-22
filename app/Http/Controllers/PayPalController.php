@@ -95,7 +95,7 @@ class PayPalController extends Controller
                 $item->save();
             }
             Session::flash('success', 'Payment successful!');      
-            return redirect('/');
+            return redirect('/library');
         }
         Session::flash('success', 'Something wrong. please try again!'); 
         return redirect('/subscription');
