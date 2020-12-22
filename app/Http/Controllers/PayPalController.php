@@ -40,7 +40,14 @@ class PayPalController extends Controller
         $data['return_url'] = route('paypal.success');
         $data['cancel_url'] = route('paypal.cancel');
         $data['total'] = $price;
-        $this->plan = $request->get('plan');
+        
+        $user = Auth::user();
+        if(!empty($request->get('plan')))
+        {            
+            $user->company_plan = $request->get('plan');                 
+            $user->save();    
+        }
+        
         $provider = new ExpressCheckout;
   
         $response = $provider->setExpressCheckout($data);
@@ -76,11 +83,7 @@ class PayPalController extends Controller
             $user = Auth::user();
             if($user->paid != "1")
             {
-                $user->paid = "1";
-                if($this->plan !="")
-                {
-                    $user->company_plan = $this->plan;
-                }            
+                $user->paid = "1";                  
                 $user->save();    
             }
             
