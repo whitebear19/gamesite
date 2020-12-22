@@ -33,6 +33,17 @@ class StripePaymentController extends Controller
                 $user->paid = "1";
                 $user->company_plan = $request->get('plan');
                 $user->save();    
+
+                if($user->paid != "1")
+                {
+                    $user->paid = "1";
+                    if(!empty($request->get('plan')))
+                    {
+                        $user->company_plan = $request->get('plan');
+                    }            
+                    $user->save();    
+                }
+
                 $rows = GameCheck::where('user_id',Auth::user()->id)->where('paid','0')->get();
                 foreach($rows as $item)
                 {

@@ -72,9 +72,16 @@ class PayPalController extends Controller
   
         if (in_array(strtoupper($response['ACK']), ['SUCCESS', 'SUCCESSWITHWARNING'])) {
             $user = Auth::user();
-            $user->paid = "1";
-            $user->company_plan = $this->plan;
-            $user->save();    
+            if($user->paid != "1")
+            {
+                $user->paid = "1";
+                if($this->plan !="")
+                {
+                    $user->company_plan = $this->plan;
+                }            
+                $user->save();    
+            }
+            
             $rows = GameCheck::where('user_id',Auth::user()->id)->where('paid','0')->get();
             foreach($rows as $item)
             {
