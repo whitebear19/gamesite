@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\ExpressCheckout;
 use Auth;
+use Session;
 use App\User;
 use App\Model\GameCheck;
 class PayPalController extends Controller
@@ -47,7 +48,7 @@ class PayPalController extends Controller
             $user->company_plan = $request->get('plan');                 
             $user->save();    
         }
-        
+
         $provider = new ExpressCheckout;
   
         $response = $provider->setExpressCheckout($data);
