@@ -3,6 +3,18 @@
 @section('content')
 <div class="">
     <div class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @if(session('success'))    
+                        <div class="alert alert-success alert-dismissible login_success_alert" role="alert" style="width:450px;margin:auto;">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <span>{{ session('success') }}</span>
+                        </div>  
+                    @endif
+                </div>
+            </div>
+        </div>
         <div class="banner-video pos_rel">
             <div>
                 <video id="video" muted="" playsinline="playsinline" autoplay="" loop="true" style="pointer-events: none;">
