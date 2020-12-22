@@ -68,8 +68,10 @@ class PayPalController extends Controller
      */
     public function success(Request $request)
     {
-        $response = $provider->getExpressCheckoutDetails($request->token);
-  
+        // $response = $provider->getExpressCheckoutDetails($request->token);
+        $paypalModule = new ExpressCheckout;
+        $response = $paypalModule->getExpressCheckoutDetails($request->token);
+
         if (in_array(strtoupper($response['ACK']), ['SUCCESS', 'SUCCESSWITHWARNING'])) {
             $user = Auth::user();
             if($user->paid != "1")
