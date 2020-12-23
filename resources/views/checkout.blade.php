@@ -70,7 +70,7 @@
                                     <input type="radio" class="select_payment" name="type" value="1">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="btn_radio_container">Stripe
+                                <label class="btn_radio_container">Credit card
                                     <input type="radio" class="select_payment" name="type" value="2">
                                     <span class="checkmark"></span>
                                 </label>

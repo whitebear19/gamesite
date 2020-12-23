@@ -23,7 +23,7 @@
                             <div class="d-flex">
                                 <div class="slide_left text-center pos_rel">
                                     <div class="vertical_middle">
-                                        <p class="text-white fs-20">NEW IN I-OASIS</p>
+                                        <p class="text-white fs-20">NEW IN i-Oasis</p>
                                         <a href="" class="btn_play_now">PLAY NOW</a>
                                     </div>                            
                                 </div>

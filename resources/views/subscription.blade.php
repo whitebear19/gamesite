@@ -17,11 +17,11 @@
                     </div>
                 </div>
             </div>
-            @if (Auth::user()->paid != "1")
+           
             <div class="container">               
                 <div class="row">
                     <div class="col-md-12">                            
-                        <div class="text-center mt-2">
+                        <div class="text-center membership_area mt-2">
                             @if (Auth::user()->type == '1') 
                                 <div class="membership_card mt-2">
                                     <div class="membership_card_header">
@@ -35,7 +35,7 @@
                                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
                                                             <span class="price-container price-final_price tax weee">
                                                                 <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
-                                                                    <span class="price">€20</span>
+                                                                    <label class="price">€20</label>
                                                                 </span> 
                                                             </span> 
                                                         </div>
@@ -55,7 +55,7 @@
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="20"><span class="price">Subscribe Now</span> </button>
+                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="20"><label class="price">Subscribe Now</label> </button>
                                         </div>
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@
                                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
                                                             <span class="price-container price-final_price tax weee">
                                                                 <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
-                                                                    <span class="price">€<span style="color:#1ed012">15</span></span>
+                                                                    <label class="price">€<span style="color:#1ed012">15</label></span>
                                                                 </span> 
                                                             </span> 
                                                         </div>
@@ -91,7 +91,7 @@
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="15"><span class="price">Subscribe Now</span> </button>
+                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="15"><label class="price">Subscribe Now</label> </button>
                                         </div>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
                                                             <span class="price-container price-final_price tax weee">
                                                                 <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
-                                                                    <span class="price">€10</span>
+                                                                    <label class="price">€10</label>
                                                                 </span> 
                                                             </span> 
                                                         </div>
@@ -124,7 +124,10 @@
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-plan="20" data-price="10"><span class="price">Subscribe Now</span> </button>
+                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-plan="20" data-price="10"><label class="price">Subscribe Now</label> </button>
+                                            @if (Auth::user()->company_plan == "20")
+                                                <p class="mt-3 alert_current_plan">Current Plan</p>
+                                            @endif                                            
                                         </div>
                                     </div>
                                 </div>
@@ -140,7 +143,7 @@
                                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
                                                             <span class="price-container price-final_price tax weee">
                                                                 <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
-                                                                    <span class="price">€20</span>
+                                                                    <label class="price">€20</label>
                                                                 </span> 
                                                             </span> 
                                                         </div>
@@ -156,7 +159,10 @@
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" data-plan="50" class="btn btn_plan btn_subscribe_now" data-price="20"><span class="price">Subscribe Now</span> </button>
+                                            <button type="button" data-plan="50" class="btn btn_plan btn_subscribe_now" data-price="20"><label class="price">Subscribe Now</label> </button>
+                                            @if (Auth::user()->company_plan == "50")
+                                                <p class="mt-3 alert_current_plan">Current Plan</p>
+                                            @endif    
                                         </div>
                                     </div>
                                 </div>
@@ -172,7 +178,7 @@
                                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
                                                             <span class="price-container price-final_price tax weee">
                                                                 <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
-                                                                    <span class="price">€30</span>
+                                                                    <label class="price">€30</label>
                                                                 </span> 
                                                             </span> 
                                                         </div>
@@ -188,7 +194,10 @@
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" data-plan="1000" class="btn btn_plan btn_subscribe_now" data-price="30"><span class="price">Subscribe Now</span> </button>
+                                            <button type="button" data-plan="1000" class="btn btn_plan btn_subscribe_now" data-price="30"><label class="price">Subscribe Now</label> </button>
+                                            @if (Auth::user()->company_plan == "1000")
+                                                <p class="mt-3 alert_current_plan">Current Plan</p>
+                                            @endif    
                                         </div>
                                     </div>
                                 </div>
@@ -202,7 +211,7 @@
                     </div>
                 </div>
             </div> 
-            @endif           
+                      
         </div>
             
         
@@ -213,13 +222,15 @@
                     <div class="col-md-12">
                         <div class="pay_container">
                             <div class="pay_header">
-                                
-                                <h3 class="fs-20 mb-4 text-orange">Select Payment Method</h3>
+                                <button class="btn-transparent btn_back_subscription">
+                                    <i class="far fa-hand-point-left"></i> Back
+                                </button>
+                                <h3 class="fs-20 mb-4 text-orange mt-4">Select Payment Method</h3>
                                 <label class="btn_radio_container">PayPal
                                     <input type="radio" class="select_payment" name="type" value="1">
                                     <span class="checkmark"></span>
                                 </label>
-                                <label class="btn_radio_container">Stripe
+                                <label class="btn_radio_container">Credit card
                                     <input type="radio" class="select_payment" name="type" value="2">
                                     <span class="checkmark"></span>
                                 </label>

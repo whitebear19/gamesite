@@ -10,28 +10,7 @@
                         <div>
                             <h1 class="game_title">{{ $game->title }}</h1>
                         </div>
-                        <div class="game_info_detail">
-                            <ul>
-                                <li class="border-right-info">
-                                    <label for="">
-                                        GINRA TECH
-                                    </label>
-                                </li>
-                                <li class="border-right-info">
-                                    <div class="d-flex">
-                                        <label for="">
-                                            3 &nbsp;
-                                        </label>
-                                        <img class="" style="width: 15px;" src="{{ asset('public/assets/img/Icon_rating_yellow_fill.svg') }}" alt="">
-                                    </div>                                   
-                                </li>
-                                <li>
-                                    <label for="">
-                                        <a href="">3 reviews</a>
-                                    </label>
-                                </li>
-                            </ul>
-                        </div>
+                        
                         <div class="text-right">
                             <div>
                                 <a href="" class="mr-20">
@@ -161,120 +140,7 @@
                             <textarea id="game_description" style="background-color: transparent;border:none;box-shadow:none;outline:none;font-family:Arial;line-height:25px;width: 100%;" name="">{{ $game->description }}</textarea>
                         </div>
                     
-                    </div>
-                    @if ($game->status != '9')
-                        <div class="view_rating_area mt-5">
-                            <div class="fs-20">
-                                <label for="">
-                                    User reviews with 5 stars |
-                                </label>
-                                <a href="">Show all</a>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="d-flex">
-                                        <div>
-                                            <label for="" class="fs-40">3</label>
-                                        </div>
-                                        <div>
-                                            <div class="product details product-item-details" style="margin-top:8px;">
-                                                <div class="product-item-details--wrapper">
-                                                    <div class="actions-secondary" data-role="add-to-links">
-                                                        <div class="product-item-rating">
-                                                            <div class="amstars-rating-container" title="96%">
-                                                                <p class="amstars-stars" style="width: 91%;">
-                                                                    <span class="hidden">96%</span> 
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>                                            
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-9">
-                                    <div class="amreview-summary-details pages" data-amreview-js="summary-details">
-                                        <a class="amreview-label" rel="nofollow" href="">
-                                            <p class="amreview-stars"> 5 <i class="fas fa-star"></i></p>             
-                                            <div class="amreview-bar percent-bar">
-                                                <div class="amreview-bar -active" style="width:33%"></div>
-                                            </div>
-                                            <p class="amreview-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">33% (1)</font></font></p>
-                                        </a>
-                                        <a class="amreview-label" rel="nofollow" href="">
-                                            <p class="amreview-stars"> 5 <i class="fas fa-star"></i></p>             
-                                            <div class="amreview-bar percent-bar">
-                                                <div class="amreview-bar -active" style="width:0%"></div>
-                                            </div>
-                                            <p class="amreview-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0% (0)</font></font></p>
-                                        </a>
-                                        <a class="amreview-label" rel="nofollow" href="">
-                                            <p class="amreview-stars"> 5 <i class="fas fa-star"></i></p>    
-                                            <div class="amreview-bar percent-bar">
-                                                <div class="amreview-bar -active" style="width:33%"></div>
-                                            </div>
-                                            <p class="amreview-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">33% (1)</font></font></p>
-                                        </a>
-                                        <a class="amreview-label" rel="nofollow" href="">
-                                            <p class="amreview-stars"> 5 <i class="fas fa-star"></i></p>                
-                                            <div class="amreview-bar percent-bar">
-                                                <div class="amreview-bar -active" style="width:0%"></div>
-                                            </div>
-                                            <p class="amreview-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0% (0)</font></font></p>
-                                        </a>
-                                        <a class="amreview-label" rel="nofollow" href="">
-                                            <p class="amreview-stars"> 5 <i class="fas fa-star"></i></p>    
-                                            <div class="amreview-bar percent-bar">
-                                                <div class="amreview-bar -active" style="width:33%"></div>
-                                            </div>
-                                            <p class="amreview-text"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">33% (1)</font></font></p>
-                                        </a>
-                                    </div>
-                                    <div class="sortby mt-5">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="comment_area mt-4">
-                            <div class="comment_item">
-                                <div class="d-flex">
-                                    <div class="w50px">
-                                        <img class="w-100" src="{{ asset('public/assets/img/avatar.png') }}" alt="">
-                                    </div>
-                                    <div class="w-100 comment_content">
-                                        <div class="user_info">
-                                            <p class="user_name">
-                                                Itzik
-                                            </p>
-                                            <span class="user_date">Oct 27 2020</span>
-                                        </div>
-                                        <div>
-                                            <div class="product details product-item-details">
-                                                <div class="product-item-details--wrapper">
-                                                    <div class="actions-secondary" data-role="add-to-links">
-                                                        <div class="product-item-rating">
-                                                            <div class="amstars-rating-container" title="96%">
-                                                                <p class="amstars-stars" style="width: 91%;">
-                                                                    <span class="hidden">96%</span> 
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>                                            
-                                            </div>
-                                            <div>
-                                                <p class="fs-14">
-                                                    0 people found this helpful
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endif
+                    </div>                    
                     
                 </div>
                 <div class="col-md-4 col-12">

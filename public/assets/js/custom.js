@@ -317,6 +317,12 @@ jQuery(function ($) {
         $(".pay_plan").val(plan);
         $(".btn_pay_now_price").html(price);
       });
+      
+      $(document).on('click','.btn_back_subscription',function(){ 
+        $(".section_pay").css("display","none");
+        $(".section_plan").fadeIn("slow");
+      });
+      
       $(document).on('click','.btn_resend_link',function(){
         $("#loading").css("display","block"); 
         $.ajax({

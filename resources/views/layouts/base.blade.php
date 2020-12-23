@@ -47,41 +47,46 @@
                 @auth
                     @if (Auth::user()->role == "1") 
                         <li class="nav-item @if($page == "library") selected_menu @endif">
-                            <a class="nav-link" href="{{ route('library') }}">LIBRARY</a>
+                            <a class="nav-link" href="{{ route('library') }}">Library</a>
                         </li>     
                     @endif                    
                 @endauth   
                      
             </ul>   
-            <div class="pos_rel">
+            <div class="pos_rel">                
                 <form class="form-inline my-2 my-lg-0">
+                    @if (Auth::check())
+                        @if (empty(Auth::user()->paid))
+                            <a class="nav-link" style="color: #d59516;font-weight: 600;"  href="{{ route('subscription') }}">Subscribe now</a>
+                        @endif
+                    @endif
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn_transparent text-grey" type="button"><i class="fas fa-search"></i></button>
                 </form>
             </div>  
             @if (Auth::check())
-                @if (Auth::user()->paid)
-                    <div>
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item dropdown pos_rel">
-                                <a id="navbarBasket" class="nav-link dropdown-toggle fs-22" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fas fa-cart-plus"></i>
+                
+                <div>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown pos_rel">
+                            <a id="navbarBasket" class="nav-link dropdown-toggle fs-22" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <i class="fas fa-cart-plus"></i>
+                            </a>
+                            <span class="count_addcart">
+                                
+                            </span>
+                            <div class="dropdown-menu addcart_list dropdown-menu-right" aria-labelledby="navbarBasket">
+                                <a class="dropdown-item go_checkoutpage" href="{{ route('checkout') }}">
+                                    Check Out
                                 </a>
-                                <span class="count_addcart">
-                                    
-                                </span>
-                                <div class="dropdown-menu addcart_list dropdown-menu-right" aria-labelledby="navbarBasket">
-                                    <a class="dropdown-item go_checkoutpage" href="{{ route('checkout') }}">
-                                        Check Out
-                                    </a>
-                                    <a class="dropdown-item empty_addCart" href="#">
-                                        Empty add cart.
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>   
-                @endif
+                                <a class="dropdown-item empty_addCart" href="#">
+                                    Empty add cart.
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>   
+                
             @endif            
             
             <div>                

@@ -145,10 +145,10 @@ class HomeController extends Controller
         {
             return redirect('/confirm');
         }
-        elseif(empty(Auth::user()->paid))
-        {
-            return redirect('/subscription');
-        }
+        // elseif(empty(Auth::user()->paid))
+        // {
+        //     return redirect('/subscription');
+        // }
         else
         {
             $page = "library";        

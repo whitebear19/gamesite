@@ -671,6 +671,9 @@ footer a{color: white;font-size: 14px;}
     border-radius: 5px;
     font-weight: 600;
 }
+button label{
+    margin: 0px;
+}
 .meta-list-block {
     background: rgba(33,36,41,.05);
     padding: 15px;
@@ -884,9 +887,9 @@ table{
 .membership_card_header_annual{
     border-bottom: 1px solid #3e4152;
 }
-.membership_card_body
-{
+.membership_card_body {
     padding: 10px;
+    min-height: 250px;
 }
 .subscription-plan__price--primary {
     font-size: 2rem;
@@ -898,6 +901,23 @@ table{
 }
 .memebership_item_text{
     font-size: 15px; line-height: 20px; font-family: roboto; letter-spacing: 0.11px; text-align: center;
+}
+.membership_area{
+    display: flex;
+    justify-content: center;
+}
+.alert_current_plan{
+    color: #d59516;
+    font-weight: 600;
+}
+.btn-transparent{
+    border: none;
+    background-color: transparent;
+    outline: none!important;
+    box-shadow: none;
+}
+.btn_back_subscription{
+    color:#ababab;
 }
 .annual{
     border-top-left-radius: 4px;

@@ -67,13 +67,8 @@ jQuery(function ($) {
                         }
                         else if(data.result == 'over_err')
                         {
-                            swal({
-                                title: "You can not create user anymore!",  
-                                text: "Please confirm your plan.",                          
-                                type: "error"
-                              }).then(function() {
-                                  location.reload();
-                              });
+                            
+                            $("#alertmembership").modal('show');
                         }
                         else if(data.result == 'ok')
                         {
