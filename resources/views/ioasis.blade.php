@@ -25,7 +25,7 @@
                 <p class="inner_area_txt">Virtual reality training with i-Oasis</p>
                 <a href="{{ route('subscription') }}" class="btn_try_oasis" title="">
                     <p style="font-weight:600; font-size: 18px;letter-spacing: 0.11px;margin:0px;">                        
-                        TRY IT NOW
+                        Subscribe now
                     </p>
                 </a>
             </div>
