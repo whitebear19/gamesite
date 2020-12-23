@@ -64,8 +64,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="pay_container">
-                            <div class="pay_header">                                
-                                <h3 class="fs-20 mb-4 text-orange">Select Payment Method</h3>
+                            <div class="pay_header">      
+                                <button class="btn-transparent btn_back_subscription">
+                                    <i class="far fa-hand-point-left"></i> Back
+                                </button>                          
+                                <h3 class="fs-20 mb-4 text-orange mt-4">Select Payment Method</h3>
                                 <label class="btn_radio_container">PayPal
                                     <input type="radio" class="select_payment" name="type" value="1">
                                     <span class="checkmark"></span>
