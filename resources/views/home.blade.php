@@ -14,7 +14,6 @@
             </div>
         </div>
     </div>
-    test
     @if ($banners)
         <div class="banner">        
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
