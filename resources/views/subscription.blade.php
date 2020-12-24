@@ -49,8 +49,12 @@
                                                     </p>
                                                     <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                         <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                        <span class="memebership_item_text">Access to quizzes</span>
-                                                    </p>                                               
+                                                        <span class="memebership_item_text">Access to skills monitoring</span>
+                                                    </p>  
+                                                    <p style="text-align: left; padding: 0px 10px 0px 10px;">
+                                                        <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
+                                                        <span class="memebership_item_text">Access to the i-Oasis city</span>
+                                                    </p>                                             
                                                 </h3>
                                             </div>
                                         </div>
@@ -85,7 +89,11 @@
                                                     </p>
                                                     <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                         <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                        <span class="memebership_item_text">Access to quizzes</span>
+                                                        <span class="memebership_item_text">Access to skills monitoring</span>
+                                                    </p>   
+                                                    <p style="text-align: left; padding: 0px 10px 0px 10px;">
+                                                        <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
+                                                        <span class="memebership_item_text">Access to the i-Oasis city</span>
                                                     </p>                                               
                                                 </h3>
                                             </div>

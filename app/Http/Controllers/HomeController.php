@@ -42,10 +42,10 @@ class HomeController extends Controller
         {
             $banners = '';
         }
-        
+        $banners_id = $latest->id;
         $category = MainCategory::all();
         $compatible = Compatible::all();
-        return view('home',compact('page','games','category','banners','soon','most','compatible'));
+        return view('home',compact('page','games','category','banners','soon','most','compatible','banners_id'));
     }
 
     public function apps()

@@ -12,15 +12,12 @@
                         </div>
                         
                         <div class="text-right">
-                            <div>
-                                <a href="" class="mr-20">
-                                    <i class="far fa-heart fs-24"></i>
-                                </a>
+                            <div>                                
                                 <button class="btn_game_price mr-20">
                                     €{{ $game->price }}
                                 </button>
                                 <button class="btn_game_subscribe">
-                                    Play By Subscription
+                                    Play by subscription
                                 </button>
                             </div>
                         </div>
@@ -216,134 +213,118 @@
 
                     <div class="game_details_text meta-list-block mt-4">
                         <p>System requirments</p>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Available OS
-                                </label>
-                            </div>
-                            <div class="text-right">
-                                <p for="" class="game_details_text_content">
-                                    @if ($game->available_os)
+                        @if ($game->available_os)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        Available OS
+                                    </label>
+                                </div>
+                                <div class="text-right">
+                                    <p for="" class="game_details_text_content">
                                         {{ $game->available_os }}
-                                    @else
-                                        -
-                                    @endif                                    
-                                </p>                                
+                                    </p>                                
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Available bitness of OS
-                                </label>
+                        @endif  
+                        @if ($game->available_os_bit)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        Available bitness of OS
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">                                    
+                                        {{ $game->available_os_bit }}                                   
+                                    </label>
+                                </div>
                             </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->available_os_bit)
-                                        {{ $game->available_os_bit }}
-                                    @else
-                                        -
-                                    @endif   
-                                </label>
+                        @endif
+                        @if ($game->processor)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        Processor
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">                                    
+                                        {{ $game->processor }}                                   
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Processor
-                                </label>
+                        @endif
+                        @if ($game->memory)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        Memory
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">                                        
+                                        {{ $game->memory }}                                       
+                                    </label>
+                                </div>
                             </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->processor)
-                                        {{ $game->processor }}
-                                    @else
-                                        -
-                                    @endif   
-                                </label>
+                        @endif
+                        @if ($game->direct)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        DirectX Version
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">                                        
+                                        {{ $game->direct }}                                       
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Memory
-                                </label>
+                        @endif 
+                        @if ($game->disk_space)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        Disk space
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">                                    
+                                        {{ $game->disk_space }}                                    
+                                    </label>
+                                </div>
                             </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->memory)
-                                        {{ $game->memory }}
-                                    @else
-                                        -
-                                    @endif   
-                                </label>
+                        @endif
+                        @if ($game->graphics)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        Graphics
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">                                    
+                                        {{ $game->graphics }}                                   
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    DirectX Version
-                                </label>
+                        @endif
+                        @if ($game->additional)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        Additional
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">                                    
+                                        {{ $game->additional }}                                    
+                                    </label>
+                                </div>
                             </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->direct)
-                                        {{ $game->direct }}
-                                    @else
-                                        -
-                                    @endif   
-                                </label>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Disk space
-                                </label>
-                            </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->disk_space)
-                                        {{ $game->disk_space }}
-                                    @else
-                                        -
-                                    @endif   
-                                </label>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Graphics
-                                </label>
-                            </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->graphics)
-                                        {{ $game->graphics }}
-                                    @else
-                                        -
-                                    @endif   
-                                </label>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Additional
-                                </label>
-                            </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->additional)
-                                        {{ $game->additional }}
-                                    @else
-                                        -
-                                    @endif   
-                                </label>
-                            </div>
-                        </div>
+                        @endif
                     </div>
 
                     <div class="game_details_text meta-list-block mt-4">

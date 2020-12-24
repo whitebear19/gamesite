@@ -24,7 +24,7 @@
                                 <div class="slide_left text-center pos_rel">
                                     <div class="vertical_middle">
                                         <p class="text-white fs-20">NEW IN i-Oasis</p>
-                                        <a href="" class="btn_play_now">PLAY NOW</a>
+                                        <a href="{{ url('game_detail', $banners_id ) }}" class="btn_play_now">PLAY NOW</a>
                                     </div>                            
                                 </div>
                                 <div class="slide_right">                                    
@@ -294,20 +294,14 @@
                                                         </button>
                                                     </div>
                                                 </div>
-                                                <div class="product-item-title">
-                                                    <strong class="product name product-item-name">
-                                                        <a href="" class="product-item-link "> {{ $item->title }} </a> 
-                                                    </strong> 
-                                                </div>
+                                                
                                                 <div class="product details product-item-details">
                                                     <div class="product-item-details--wrapper">
-                                                        <div class="actions-secondary" data-role="add-to-links">
-                                                            <div class="product-item-rating">
-                                                                <div class="amstars-rating-container" title="96%">
-                                                                    <p class="amstars-stars" style="width: 91%;">
-                                                                        <span class="hidden">96%</span> 
-                                                                    </p>
-                                                                </div>
+                                                        <div class="actions-secondary text-truncate" data-role="add-to-links">
+                                                            <div class="product-item-title-publish text-truncate">
+                                                                <strong class="product name product-item-name">
+                                                                    <a href="" class="product-item-link "> {{ $item->title }} </a> 
+                                                                </strong> 
                                                             </div>
                                                         </div>
                                                         <div class="product-item-price">

@@ -28,31 +28,26 @@
                         </a>
                         
                         <p class="text-white mt-4">
-                            Get The Most Out Of VR With INFINITY SUBSCRIBE NOW FOR:
+                            Get the best experience by subscribing to i-Oasis
                         </p>
                     </div>                    
                     <div class="auth_leftside_body mt-4">
                         <ul>
                             <li>
                                 <p>
-                                    Curated content
+                                    Exclusive content
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    New titles added frequently
+                                    Skills monitoring
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    Critically-acclaimed experiences
+                                    Discover the i-oasis city
                                 </p>
-                            </li>
-                            <li>
-                                <p>
-                                    Compatible with most VR headsets
-                                </p>
-                            </li>
+                            </li>                           
                         </ul>
                     </div>        
                 </div>

@@ -40,10 +40,10 @@ body {
     padding-top:60px;
 }
 .auth_leftside_body ul{
-    padding: 0px;
+    padding: 0px 20px;
 }
 .auth_leftside_body ul li{
-    list-style-type: none;
+    /* list-style-type: none; */
     margin:30px 10px;
     color:white;
 }
@@ -60,7 +60,7 @@ body {
     padding:30px;
 }
 .auth_body_title{
-    font-size: 32px;
+    font-size: 30px;
 }
 .auth_with_social{
     background-color: #f2f4f8;

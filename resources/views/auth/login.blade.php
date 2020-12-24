@@ -7,13 +7,13 @@
                 Login
             </label>
         </div>
-        <div class="line text-right pos_rel">   
+        <div class="line text-right pos_rel" style="display: none;">   
             <hr>         
             <a href="{{ route('register') }}" class="auth_which">
                 Create new account
             </a>
         </div>
-        <div class="auth_with_social d-flex">
+        <div class="auth_with_social d-flex" style="display: none!important;">
             <div class="mr-auto">
                 <label for="">
                     Login with a social network account
@@ -32,7 +32,7 @@
             </div>
         </div>
         <br><br>
-        <div class="native-login-block">
+        <div class="native-login-block" style="display: none;">
             <div class="native-login-space-left"></div>
             <div class="native-login-text">
                 <span>Or sign in with</span>
@@ -81,11 +81,15 @@
             </div>
         </form>
         <br>
-        <div class="text-right">
-            <a href="">Forgot Password</a>
+        <div class="text-right">            
+            @if (Route::has('password.request'))
+                <a class="" style="float:right;" href="{{ route('password.request') }}">
+                    <b class="text-color-blue">{{ __('Forgot password') }}</b>
+                </a>
+            @endif
         </div>
         <br>
-        <div>
+        <div class="mt-4">
             <p class="fs-14">
                 By logging in, you agree to the account's <a href="">Terms of Service</a>. View <a href="">Privacy Policy</a>.
             </p>

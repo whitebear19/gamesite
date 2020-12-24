@@ -41,9 +41,7 @@
                 <li class="nav-item @if($page == "games") selected_menu @endif">
                     <a class="nav-link" href="{{ route('games') }}">Training</a>
                 </li> 
-                <li class="nav-item @if($page == "videos") selected_menu @endif">
-                    <a class="nav-link" target="blank" href="#">Videos</a>
-                </li>   
+                 
                 @auth
                     @if (Auth::user()->role == "1") 
                         <li class="nav-item @if($page == "library") selected_menu @endif">
