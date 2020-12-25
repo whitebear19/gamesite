@@ -78,7 +78,7 @@
                                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
                                                             <span class="price-container price-final_price tax weee">
                                                                 <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
-                                                                    <label class="price">€<span style="color:#1ed012">15</label></span>
+                                                                    <label class="price">€<span>15</label></span>
                                                                 </span> 
                                                             </span> 
                                                         </div>

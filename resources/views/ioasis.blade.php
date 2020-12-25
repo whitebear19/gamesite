@@ -25,7 +25,7 @@
                 <p class="inner_area_txt">{{ __('ioasis.Virtual reality training with i-Oasis') }}</p>
                 <a href="{{ route('subscription') }}" class="btn_try_oasis" title="">
                     <p style="font-weight:600; font-size: 18px;letter-spacing: 0.11px;margin:0px;">                        
-                        {{ __('ioasis.Subscribe now') }}
+                        {{ __('ioasis.Subscribe Now') }}
                     </p>
                 </a>
             </div>
@@ -44,13 +44,13 @@
                         </div>                    
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-5">
                     <div class="col-md-4">
                         <div class="text-center">
                             <div>
                                 <img class="awaits_img" src="{{ asset('public/assets/img/ioasis-headsets.png') }}" alt="">
                             </div>
-                            <div class="">
+                            <div class="mt-5">
                                 <p class="awaits_txt">{{ __('ioasis.Access exclusive content') }}</p>
                             </div>
                         </div>
@@ -60,7 +60,7 @@
                             <div>
                                 <img class="awaits_img" src="{{ asset('public/assets/img/ioasis-experiences.png') }}" alt="">
                             </div>
-                            <div class="">
+                            <div class="mt-5">
                                 <p class="awaits_txt">{{ __('ioasis.Keep an eye on your progress thanks to skills monitoring') }}
                                     </p>
                             </div>
@@ -71,7 +71,7 @@
                             <div>
                                 <img class="awaits_img" src="{{ asset('public/assets/img/ioasis-new_titles.png') }}" alt="">
                             </div>
-                            <div class="">
+                            <div class="mt-5">
                                 <p class="awaits_txt">{{ __('ioasis.Discover the i-Oasis city') }}</p>
                             </div>
                         </div>
@@ -305,7 +305,7 @@
                                     </div>
                                     <div class="membership_card mt-2">                               
                                         <div class="membership_card_header">
-                                        I-Oasis <span style="color: #ca5050;font-weight:600;">{{ __('ioasis.Annual') }}</span> 
+                                        I-Oasis <span>{{ __('ioasis.Annual') }}</span> 
                                         </div>
                                         <div class="membership_card_body">
                                             <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
@@ -315,7 +315,7 @@
                                                             <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
                                                                 <span class="price-container price-final_price tax weee">
                                                                     <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
-                                                                        <label class="price">€<span style="color:#1ed012">15</label></span>
+                                                                        <label class="price">€<span>15</label></span>
                                                                     </span> 
                                                                 </span> 
                                                             </div>
@@ -493,7 +493,7 @@
                                 </div>
                                 <div class="membership_card mt-2">                               
                                     <div class="membership_card_header">
-                                    I-Oasis <span style="color: #ca5050;font-weight:600;">{{ __('ioasis.Annual') }}</span> 
+                                    I-Oasis <span>{{ __('ioasis.Annual') }}</span> 
                                     </div>
                                     <div class="membership_card_body">
                                         <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
@@ -503,7 +503,7 @@
                                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="5510" data-price-box="product-id-5510">
                                                             <span class="price-container price-final_price tax weee">
                                                                 <span id="product-price-5510" data-price-amount="999" data-price-type="finalPrice" class="price-wrapper ">
-                                                                    <label class="price">€<span style="color:#1ed012">15</label></span>
+                                                                    <label class="price">€<span>15</label></span>
                                                                 </span> 
                                                             </span> 
                                                         </div>
