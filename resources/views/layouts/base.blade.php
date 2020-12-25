@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendor/slick/slick-theme.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/css/slick.css') }}">   
     <script src="{{ asset('public/assets/js/jquery.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="{{ asset('public/assets/js/bootstrap.min.js') }}"></script>   
     <script src="{{ asset('public/assets/js/accordian.js') }}"></script>       
     <script src="{{ asset('public/assets/js/slick.js') }}"></script>   
@@ -33,19 +34,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item @if($page == "home") selected_menu @endif">
-                    <a class="nav-link" href="{{ route('home') }}">Home </a>
+                    <a class="nav-link" href="{{ route('home') }}">{{ __('messages.Home')}}</a>
                 </li>                
                 <li class="nav-item @if($page == "ioasis") selected_menu @endif">
-                    <a class="nav-link" href="{{ route('ioasis') }}">i-Oasis </a>
+                    <a class="nav-link" href="{{ route('ioasis') }}">{{ __('i-Oasis')}}</a>
                 </li>
                 <li class="nav-item @if($page == "games") selected_menu @endif">
-                    <a class="nav-link" href="{{ route('games') }}">Training</a>
+                    <a class="nav-link" href="{{ route('games') }}">{{ __('messages.Training')}}</a>
                 </li> 
                  
                 @auth
                     @if (Auth::user()->role == "1") 
                         <li class="nav-item @if($page == "library") selected_menu @endif">
-                            <a class="nav-link" href="{{ route('library') }}">Library</a>
+                            <a class="nav-link" href="{{ route('library') }}">{{ __('messages.Library')}}</a>
                         </li>     
                     @endif                    
                 @endauth   
@@ -55,7 +56,7 @@
                 <form class="form-inline my-2 my-lg-0">
                     @if (Auth::check())
                         @if (empty(Auth::user()->paid))
-                            <a class="nav-link" style="color: #d59516;font-weight: 600;"  href="{{ route('subscription') }}">Subscribe now</a>
+                            <a class="nav-link" style="color: #d59516;font-weight: 600;"  href="{{ route('subscription') }}">{{ __('messages.Subscribe now') }}</a>
                         @endif
                     @endif
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -75,10 +76,10 @@
                             </span>
                             <div class="dropdown-menu addcart_list dropdown-menu-right" aria-labelledby="navbarBasket">
                                 <a class="dropdown-item go_checkoutpage" href="{{ route('checkout') }}">
-                                    Check Out
+                                    {{ __('messages.Check Out') }}
                                 </a>
                                 <a class="dropdown-item empty_addCart" href="#">
-                                    Empty add cart.
+                                    {{ __('messages.Empty add cart') }}
                                 </a>
                             </div>
                         </li>
@@ -91,7 +92,7 @@
                 <ul class="navbar-nav mr-auto">
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Sign In <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ route('login') }}">{{ __('messages.Sign In') }} <span class="sr-only">(current)</span></a>
                     </li>
                     @else  
                         <li class="nav-item dropdown">
@@ -103,19 +104,19 @@
 
                                 @if (Auth::user()->role == "2") 
                                     <a class="dropdown-item" href="{{ route('admin.dashboard') }}">
-                                        {{ __('Dashboard') }}
+                                        {{ __('messages.Dashboard') }}
                                     </a>
                                 @endif
                                 @if (Auth::user()->type == "2") 
                                     <a class="dropdown-item" href="{{ route('company.dashboard') }}">
-                                        {{ __('Dashboard') }}
+                                        {{ __('messages.Dashboard') }}
                                     </a>
                                 @endif
 
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('messages.Logout') }}
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -140,20 +141,20 @@
                         <form action="">
                             <div class="contactus">                           
                                 <div class="contactus_title">
-                                    <p class="fs-30">Contact Us</p>
+                                    <p class="fs-30">{{ __('messages.Contact Us') }}</p>
                                 </div>
                                 <div class="contactus_body">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Your name">
+                                        <input type="text" class="form-control" placeholder="{{ __('messages.Your name') }}">
                                     </div>
                                     <div class="form-group">
-                                         <input type="text" class="form-control" placeholder="Your Email">
+                                         <input type="text" class="form-control" placeholder="{{ __('messages.Your Email') }}">
                                      </div>
                                      <div class="form-group">
-                                         <textarea type="text" class="form-control" rows="5" placeholder="Your message"></textarea>
+                                         <textarea type="text" class="form-control" rows="5" placeholder="{{ __('messages.Your message') }}"></textarea>
                                      </div>
                                      <div class="form-group text-center">
-                                         <button type="button" class="btn_contactus">Submit</button>
+                                         <button type="button" class="btn_contactus">{{ __('messages.Submit') }}</button>
                                      </div>
                                 </div>
                             </div>
@@ -164,7 +165,7 @@
                 <div class="col-md-4">
                     <div class="text-center">
                         <label for="" class="fs-30">
-                            Follow us on
+                            {{ __('messages.Follow us on') }}
                         </label>
                         <ul class="footer_follows">
                             <li>
@@ -188,10 +189,10 @@
                 </div>
                 <div class="col-md-4">
                     <div class="text-center">
-                        <label for="" class="text-white"><b>LANGUAGE</b></label>
-                        <select name="" class="sel_language" id="">
-                            <option value="">English</option>
-                            <option value="">French</option>
+                        <label for="" class="text-white"><b>{{ __('messages.LANGUAGE') }}</b></label>
+                        <select name="" class="sel_language changeLang" id="">                            
+                            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                            <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>France</option>
                         </select>
                     </div>
                     <div class="text-center mt-resp">
@@ -220,33 +221,76 @@
                 <ul class="navbar-nav mr-auto">                    
                    
                     <li class="nav-item @if($page == "home") selected_menu @endif">
-                        <a class="nav-link" href="/">Home </a>
-                    </li>
+                        <a class="nav-link" href="{{ route('home') }}">{{ __('messages.Home')}}</a>
+                    </li>                
                     <li class="nav-item @if($page == "ioasis") selected_menu @endif">
-                        <a class="nav-link" href="{{ route('ioasis') }}">I-OASIS </a>
+                        <a class="nav-link" href="{{ route('ioasis') }}">{{ __('i-Oasis')}}</a>
                     </li>
                     <li class="nav-item @if($page == "games") selected_menu @endif">
-                        <a class="nav-link" href="{{ route('games') }}">Serious Games</a>
+                        <a class="nav-link" href="{{ route('games') }}">{{ __('messages.Training')}}</a>
                     </li> 
-                    <li class="nav-item @if($page == "videos") selected_menu @endif">
-                        <a class="nav-link" target="blank" href="#">VIDEOS</a>
-                    </li>           
+                    @auth
+                        @if (Auth::user()->role == "1") 
+                            <li class="nav-item @if($page == "library") selected_menu @endif">
+                                <a class="nav-link" href="{{ route('library') }}">{{ __('messages.Library')}}</a>
+                            </li>     
+                        @endif                    
+                    @endauth
+
+                    @if (Auth::check())
+                        @if (empty(Auth::user()->paid))
+                            <li class="nav-item @if($page == "games") selected_menu @endif">
+                                <a class="nav-link" style="color: #d59516;font-weight: 600;"  href="{{ route('subscription') }}">{{ __('messages.Subscribe now') }}</a>
+                            </li>                             
+                        @endif
+                    @endif
+
+                    @if (Auth::check())
+                        <li class="nav-item @if($page == "games") selected_menu @endif">
+                            <div>
+                                <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item dropdown pos_rel">
+                                        <a id="navbarBasket" class="nav-link dropdown-toggle fs-22" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <i class="fas fa-cart-plus"></i>
+                                        </a>
+                                        <span class="count_addcart">
+                                            
+                                        </span>
+                                        <div class="dropdown-menu addcart_list dropdown-menu-right" aria-labelledby="navbarBasket">
+                                            <a class="dropdown-item go_checkoutpage" href="{{ route('checkout') }}">
+                                                {{ __('messages.Check Out') }}
+                                            </a>
+                                            <a class="dropdown-item empty_addCart" href="#">
+                                                {{ __('messages.Empty add cart') }}
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>  
+                    @endif            
+
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Sign In <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('messages.Sign In') }} <span class="sr-only">(current)</span></a>
                         </li>
                     @else  
                         
                         @if (Auth::user()->role == "2") 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.dashboard') }}">{{ __('Dashboard') }}</a>
+                                <a class="nav-link" href="{{ route('admin.dashboard') }}">{{ __('messages.Dashboard') }}</a>
+                            </li>                            
+                        @endif
+                        @if (Auth::user()->type == "2") 
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('company.dashboard') }}">{{ __('messages.Dashboard') }}</a>                                
                             </li>                            
                         @endif
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('messages.Logout') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -254,7 +298,7 @@
                             </form>
                         </li>  
                     @endguest  
-
+                   
                     <li class="nav-item">
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -266,6 +310,15 @@
           </div>
         </div>
       </div>
+        <script type="text/javascript">
+  
+            var url = "{{ route('changeLang') }}";
+        
+            $(".changeLang").change(function(){
+                window.location.href = url + "?lang="+ $(this).val();
+            });
+      
+        </script>
 </body>
 </html>
 

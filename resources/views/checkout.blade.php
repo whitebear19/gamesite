@@ -66,9 +66,9 @@
                         <div class="pay_container">
                             <div class="pay_header">      
                                 <button class="btn-transparent btn_back_subscription">
-                                    <i class="far fa-hand-point-left"></i> Back
+                                    <i class="far fa-hand-point-left"></i> {{ __('ioasis.Back') }}
                                 </button>                          
-                                <h3 class="fs-20 mb-4 text-orange mt-4">Select Payment Method</h3>
+                                <h3 class="fs-20 mb-4 text-orange mt-4">{{ __('ioasis.Select Payment Method') }}</h3>
                                 <label class="btn_radio_container">PayPal
                                     <input type="radio" class="select_payment" name="type" value="1">
                                     <span class="checkmark"></span>
@@ -101,23 +101,23 @@
                                                 <input type="text" class="form-control card-cvc" placeholder="ex.311" size='4'>
                                             </div>
                                             <div class="col-md-4 form-group expiration required">
-                                                <label for="" class="text-white">Expiration Month</label>
+                                                <label for="" class="text-white">{{ __('ioasis.Expiration Month') }}</label>
                                                 <input type="text" class="form-control card-expiry-month" placeholder="MM" size='2'>
                                             </div>
                                             <div class="col-md-4 form-group expiration required">
-                                                <label for="" class="text-white">Expiration Year</label>
+                                                <label for="" class="text-white">{{ __('ioasis.Expiration Year') }}</label>
                                                 <input type="text" class="form-control card-expiry-year" placeholder="YYYY" size='4'>
                                             </div>
                                         </div>
                                     </div>
                                     <div class='form-row row'>
                                         <div class='col-md-12 error form-group hide'>
-                                            <div class='alert-danger alert'>Please correct the errors and try
-                                                again.</div>
+                                            <div class='alert-danger alert'>{{ __('ioasis.Please correct the errors and try
+                                                again') }}.</div>
                                         </div>
                                     </div>
                                     <div class="form-group text-center mt-5">
-                                        <button type="submit" class="btn btn_plan">Pay Now €<span class="btn_pay_now_price"></span></button>
+                                        <button type="submit" class="btn btn_plan">{{ __('ioasis.Pay Now') }} €<span class="btn_pay_now_price"></span></button>
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
                                 </form>
@@ -130,7 +130,7 @@
                                     id="paypal-form">
                                     @csrf                            
                                     <div class="form-group text-center mt-5">
-                                        <button type="submit" class="btn btn_plan">Pay Now €<span class="btn_pay_now_price"></span></button>
+                                        <button type="submit" class="btn btn_plan">{{ __('ioasis.Pay Now') }} €<span class="btn_pay_now_price"></span></button>
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
                                 </form>

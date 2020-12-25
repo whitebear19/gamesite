@@ -10,6 +10,7 @@ use App\Model\Compatible;
 use App\Model\Setting;
 use App\Model\GameCheck;
 use App\User;
+use App;
 class HomeController extends Controller
 {
     /**
@@ -139,6 +140,14 @@ class HomeController extends Controller
         return view('checkout',compact('page'));
     }
     
+
+    public function change(Request $request)
+    {
+        App::setLocale($request->lang);
+        session()->put('locale', $request->lang);  
+        return redirect()->back();               
+    }
+
     public function library(Request $request)
     {
         if(empty(Auth::user()->email_verified_at))

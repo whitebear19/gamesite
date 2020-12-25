@@ -10,7 +10,7 @@
                     <div class="select_service">
                         
                         <div>
-                            <p class="fs-16 mb-0"><b>Filter By</b></p>
+                            <p class="fs-16 mb-0"><b>{{ __('games.Filter By') }}</b></p>
                            
                                 @if (!empty($gid))
                                     @foreach ($gid as $id)
@@ -19,7 +19,7 @@
                                         @endphp
 
                                         @if (!empty($name))                                        
-                                            <p class="fs-16 mb-0 filter_result">GENRE: 
+                                            <p class="fs-16 mb-0 filter_result">{{ __('games.GENRE') }}: 
                                                 <span>                                            
                                                     {{ $name->name }}                                                
                                                 </span>
@@ -36,7 +36,7 @@
                                             $name = \App\Model\Compatible::find($id)
                                         @endphp
                                         @if (!empty($name))                                        
-                                            <p class="fs-16 mb-0 filter_result">HEADSET: 
+                                            <p class="fs-16 mb-0 filter_result">{{ __('games.HEADSET') }}: 
                                                 <span>                                                
                                                     {{ $name->name }}                                                
                                                 </span>
@@ -52,7 +52,7 @@
                                 <section class="accordion-group__accordion ">
                                     <header class="accordion-group__accordion-head">
                                         <h3 class="accordion-group__accordion-heading">
-                                            <button type="button" class="accordion-group__accordion-btn"><b>GENRE</b></button>
+                                            <button type="button" class="accordion-group__accordion-btn"><b>{{ __('games.GENRE') }}</b></button>
                                         </h3>
                                     </header>
                                     <div class="accordion-group__accordion-panel">
@@ -60,7 +60,7 @@
                                             
                                             <ul class="mb-0 ul_select_filter">
                                                 @foreach ($category as $item)
-                                                    <li class="mt-2 mb-2 text-left">                                                            
+                                                    <li class="mt-2 mb-2 text-left">                                                           
                                                         <button class="btn_transparent btn_select_filter text-left" data-type="1" data-id="{{ $item->id }}">{{ $item->name }}</button>
                                                     </li>
                                                 @endforeach
@@ -71,7 +71,7 @@
                                 <section class="accordion-group__accordion ">
                                     <header class="accordion-group__accordion-head">
                                         <h3 class="accordion-group__accordion-heading">
-                                            <button type="button" class="accordion-group__accordion-btn"><b>HEADSET</b></button>
+                                            <button type="button" class="accordion-group__accordion-btn"><b>{{ __('games.HEADSET') }}</b></button>
                                         </h3>
                                     </header>
                                     <div class="accordion-group__accordion-panel">
@@ -97,12 +97,12 @@
                             <div class="col-md-12">
                                 <div class="d-flex-m">
                                     <div class="cnt_total mr-auto">
-                                        <span class="fs-20">{{ count($games) }} results</span>
+                                        <span class="fs-20">{{ count($games) }} {{ __('games.results') }}</span>
                                     </div>
                                     <form action="{{ route('games') }}" class="form_select_sortby" method="GET">
                                         <div class="sort_by">
 
-                                            <label for="" class="mr-1">Sort by</label>
+                                            <label for="" class="mr-1">{{ __('games.Sort by') }}</label>
                                        
                                             <select name="sort" class="select_sortby" id="">
                                                 <option value="az" @if ($sort == 'az') selected @endif>Name A-Z</option>
@@ -134,7 +134,7 @@
                         
                         
                         <div class="area_game_item pt-70">
-                            <p class="fs-22"><b>New Releases</b></p>
+                            <p class="fs-22"><b>{{ __('games.New Releases') }}</b></p>
                             <div class="row" style="min-height: 300px;">
                                 @foreach ($games as $item)
                                     <div class="col-md-4" style="min-height: 240px;">
@@ -176,7 +176,7 @@
                                                     </div>
                                                     <div class="w-50 pos_rel">
                                                         <button class="btn_play">
-                                                            Play
+                                                            {{ __('games.Play') }}
                                                         </button>
                                                     </div>
                                                 </div>                                                

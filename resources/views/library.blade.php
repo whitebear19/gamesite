@@ -27,10 +27,10 @@
                                         No
                                     </td>
                                     <td>
-                                        Game
+                                        {{ __('library.Game') }}
                                     </td>
                                     <td>
-                                        Price
+                                        {{ __('library.Price') }}
                                     </td>
                                 </tr>
                             </thead>
@@ -57,7 +57,7 @@
                                 @else
                                     <tr>
                                         <td colspan="3">
-                                            <p>There is no any purchased yet.</p>
+                                            <p>{{ __('library.There is no any purchased yet') }}.</p>
                                         </td>
                                     </tr>
                                 @endif

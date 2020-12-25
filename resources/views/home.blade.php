@@ -23,8 +23,8 @@
                             <div class="d-flex">
                                 <div class="slide_left text-center pos_rel">
                                     <div class="vertical_middle">
-                                        <p class="text-white fs-20">NEW IN i-Oasis</p>
-                                        <a href="{{ url('game_detail', $banners_id ) }}" class="btn_play_now">PLAY NOW</a>
+                                        <p class="text-white fs-20">{{ __('home.NEW IN i-Oasis') }}</p>
+                                        <a href="{{ url('game_detail', $banners_id ) }}" class="btn_play_now">{{ __('home.PLAY NOW') }}</a>
                                     </div>                            
                                 </div>
                                 <div class="slide_right">                                    
@@ -61,7 +61,7 @@
                     <div class="select_service">
                         
                         <div>
-                            <p class="fs-16 mb-0"><b>GENRE</b></p>
+                            <p class="fs-16 mb-0"><b>{{ __('home.GENRE') }}</b></p>
                             <ul class="mb-0 ul_select_filter">
                                 @foreach ($category as $item)
                                     <li class="mt-2 mb-2 text-left">                                                            
@@ -75,7 +75,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="area_staff_picks">
-                        <p class="fs-22"><b>MOST POPULAR</b></p>
+                        <p class="fs-22"><b>{{ __('home.MOST POPULAR') }}</b></p>
                         <div class="row">
                             @if (count($most)>0)
                                 @php
@@ -144,14 +144,14 @@
                                 </div>
                             @else
                                 <div class="col-md-12">
-                                    <p>No most popular registered yet!</p>
+                                    <p>{{ __('home.No most popular registered yet!') }}</p>
                                 </div>
                             @endif  
                             
                         </div>
                     </div>
                     <div class="area_game_item pt-70">
-                        <p class="fs-22"><b>Coming Soon</b></p>
+                        <p class="fs-22"><b>{{ __('home.Coming Soon') }}</b></p>
                         <div class="row">
                             @if (count($soon)>0)
                                 @foreach ($soon as $item)
@@ -188,13 +188,13 @@
                                                 <div class="actions-primary coming_soon_btn_wishlist h-50p">
                                                     <div class="text-center w-100 pos_rel">
                                                         <button class="btn_add_wishlist">
-                                                            ADD WISHLIST
+                                                            {{ __('home.ADD WISHLIST') }}
                                                         </button>
                                                     </div>                                            
                                                 </div>
                                                 <div class="product-item-title">
                                                     <strong class="product name product-item-name text-center">
-                                                        <p class="coming_soon_text">Available: {{ $item->expected_date }}</p>
+                                                        <p class="coming_soon_text">{{ __('home.Available') }}: {{ $item->expected_date }}</p>
                                                         <a href="" class="product-item-link "> {{ $item->title }} </a> 
                                                     </strong> 
                                                 </div>
@@ -232,7 +232,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-item-coming-soon">
-                                                    <span>Coming Soon</span>
+                                                    <span>{{ __('home.Coming Soon') }}</span>
                                                 </div>
                                             </div>
                                         </div>                                    
@@ -240,7 +240,7 @@
                                 @endforeach
                             @else
                                 <div class="col-md-12">
-                                    <p>No coming soon game registered yet!</p>
+                                    <p>{{ __('home.No coming soon game registered yet!') }}</p>
                                 </div>
                             @endif
                                                      
@@ -248,7 +248,7 @@
                         
                     </div>
                     <div class="area_game_item pt-70">
-                        <p class="fs-22"><b>New Releases</b></p>
+                        <p class="fs-22"><b>{{ __('home.New Releases') }}</b></p>
                         <div class="row" style="min-height: 300px;">
                             @if (!empty($games))
                                 @foreach ($games as $item)
@@ -290,7 +290,7 @@
                                                     </div>
                                                     <div class="w-50 pos_rel">
                                                         <button class="btn_play">
-                                                            Play
+                                                            {{ __('home.Play') }}
                                                         </button>
                                                     </div>
                                                 </div>
@@ -353,9 +353,8 @@
                                 @endforeach     
                             @else
                                 <div class="col-md-12">
-                                    <p>No game registered yet</p>
-                                </div>
-                                
+                                    <p>{{ __('home.No game registered yet') }}</p>
+                                </div>                                
                             @endif
                                                         
                         </div>                        

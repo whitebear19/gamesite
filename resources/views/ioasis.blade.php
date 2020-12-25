@@ -22,10 +22,10 @@
                 </video>
             </div>
             <div class="inner_area">
-                <p class="inner_area_txt">Virtual reality training with i-Oasis</p>
+                <p class="inner_area_txt">{{ __('ioasis.Virtual reality training with i-Oasis') }}</p>
                 <a href="{{ route('subscription') }}" class="btn_try_oasis" title="">
                     <p style="font-weight:600; font-size: 18px;letter-spacing: 0.11px;margin:0px;">                        
-                        Subscribe now
+                        {{ __('ioasis.Subscribe now') }}
                     </p>
                 </a>
             </div>
@@ -36,10 +36,10 @@
                     <div class="col-md-12">
                         <div class="text-center">
                             <h3 class="isasis_section_title">
-                                Your next virtual experience awaits
+                                {{ __('ioasis.Your next virtual experience awaits') }}
                             </h3>
-                            <p class="isasis_section_txt">
-                                All the best in one subscription
+                            <p class="isasis_section_txt">                                
+                                {{ __('ioasis.All the best in one subscription') }}
                             </p>
                         </div>                    
                     </div>
@@ -51,7 +51,7 @@
                                 <img class="awaits_img" src="{{ asset('public/assets/img/ioasis-headsets.png') }}" alt="">
                             </div>
                             <div class="">
-                                <p class="awaits_txt">Access exclusive content </p>
+                                <p class="awaits_txt">{{ __('ioasis.Access exclusive content') }}</p>
                             </div>
                         </div>
                     </div>
@@ -61,8 +61,8 @@
                                 <img class="awaits_img" src="{{ asset('public/assets/img/ioasis-experiences.png') }}" alt="">
                             </div>
                             <div class="">
-                                <p class="awaits_txt">Keep an eye on your progress<br>
-                                    thanks to skills monitoring</p>
+                                <p class="awaits_txt">{{ __('ioasis.Keep an eye on your progress thanks to skills monitoring') }}
+                                    </p>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                                 <img class="awaits_img" src="{{ asset('public/assets/img/ioasis-new_titles.png') }}" alt="">
                             </div>
                             <div class="">
-                                <p class="awaits_txt">Discover the i-Oasis city</p>
+                                <p class="awaits_txt">{{ __('ioasis.Discover the i-Oasis city') }}</p>
                             </div>
                         </div>
                     </div>                    
@@ -85,10 +85,10 @@
                     <div class="col-md-12">
                         <div class="text-center">
                             <h3 class="isasis_section_title">
-                                Get training with peace of mind
+                                {{ __('ioasis.Get training with peace of mind') }}
                             </h3>
                             <p class="isasis_section_txt">
-                                There are no limitations, and always something new to enjoy.
+                                {{ __('ioasis.There are no limitations, and always something new to enjoy') }}.
                             </p>
                         </div>                    
                     </div>
@@ -110,7 +110,7 @@
                     <div class="col-md-12">
                         <div class="text-center">
                             <h3 class="isasis_section_title">
-                                Your choice of type of headset
+                                {{ __('ioasis.Your choice of type of headset') }}
                             </h3>
                             <p class="isasis_section_txt">
                                 Oculus Quest 2, HTC VIVE
@@ -265,7 +265,7 @@
                                 @if (Auth::user()->type == '1') 
                                     <div class="membership_card mt-2">
                                         <div class="membership_card_header">
-                                            I-Oasis Mensual
+                                            {{ __('ioasis.I-Oasis Mensual') }}
                                         </div>
                                         <div class="membership_card_body">
                                             <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
@@ -280,32 +280,32 @@
                                                                 </span> 
                                                             </div>
                                                         </b> 
-                                                        <sup>/Month</sup>
+                                                        <sup>/{{ __('ioasis.Month') }}</sup>
                                                     </h2>
                                                     <h3 class="subscription-plan__price--secondary">
                                                         <p style="text-align: left; padding: 10px 10px 0px 10px;">
                                                             <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                            <span class="memebership_item_text">Exclusive offers</span>
+                                                            <span class="memebership_item_text">{{ __('ioasis.Exclusive offers') }}</span>
                                                         </p>
                                                         <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                             <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                            <span class="memebership_item_text">Access to skills monitoring</span>
+                                                            <span class="memebership_item_text">{{ __('ioasis.Access to skills monitoring') }}</span>
                                                         </p>  
                                                         <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                             <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                            <span class="memebership_item_text">Access to the i-Oasis city</span>
+                                                            <span class="memebership_item_text">{{ __('ioasis.Access to the i-Oasis city') }}</span>
                                                         </p>                                             
                                                     </h3>
                                                 </div>
                                             </div>
                                             <div class="text-center mt-3 mb-3">
-                                                <button type="button" class="btn btn_plan btn_subscribe_now" data-price="20"><label class="price">Subscribe Now</label> </button>
+                                                <button type="button" class="btn btn_plan btn_subscribe_now" data-price="20"><label class="price">{{ __('ioasis.Subscribe Now') }}</label> </button>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="membership_card mt-2">                               
                                         <div class="membership_card_header">
-                                        I-Oasis <span style="color: #ca5050;font-weight:600;">Annual</span> 
+                                        I-Oasis <span style="color: #ca5050;font-weight:600;">{{ __('ioasis.Annual') }}</span> 
                                         </div>
                                         <div class="membership_card_body">
                                             <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
@@ -320,26 +320,26 @@
                                                                 </span> 
                                                             </div>
                                                         </b> 
-                                                        <sup>/Month</sup>
+                                                        <sup>/{{ __('ioasis.Month') }}</sup>
                                                     </h2>
                                                     <h3 class="subscription-plan__price--secondary">
                                                         <p style="text-align: left; padding: 10px 10px 0px 10px;">
                                                             <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                            <span class="memebership_item_text">Exclusive offers</span>
+                                                            <span class="memebership_item_text">{{ __('ioasis.Exclusive offers') }}</span>
                                                         </p>
                                                         <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                             <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                            <span class="memebership_item_text">Access to skills monitoring</span>
+                                                            <span class="memebership_item_text">{{ __('ioasis.Access to skills monitoring') }}</span>
                                                         </p>   
                                                         <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                             <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                            <span class="memebership_item_text">Access to the i-Oasis city</span>
+                                                            <span class="memebership_item_text">{{ __('ioasis.Access to the i-Oasis city') }}</span>
                                                         </p>                                               
                                                     </h3>
                                                 </div>
                                             </div>
                                             <div class="text-center mt-3 mb-3">
-                                                <button type="button" class="btn btn_plan btn_subscribe_now" data-price="15"><label class="price">Subscribe Now</label> </button>
+                                                <button type="button" class="btn btn_plan btn_subscribe_now" data-price="15"><label class="price">{{ __('ioasis.Subscribe Now') }}</label> </button>
                                             </div>
                                         </div>
                                     </div>
@@ -361,20 +361,20 @@
                                                                 </span> 
                                                             </div>
                                                         </b> 
-                                                        <sup>/Month</sup>
+                                                        <sup>/{{ __('ioasis.Month') }}</sup>
                                                     </h2>
                                                     <h3 class="subscription-plan__price--secondary">
                                                         <p style="text-align: left; padding: 10px 10px 0px 10px;">
                                                             <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                            <span class="memebership_item_text">Pack 20 logins </span>
+                                                            <span class="memebership_item_text">{{ __('ioasis.Pack 20 logins') }}</span>
                                                         </p>                                   
                                                     </h3>
                                                 </div>
                                             </div>
                                             <div class="text-center mt-3 mb-3">
-                                                <button type="button" class="btn btn_plan btn_subscribe_now" data-plan="20" data-price="10"><label class="price">Subscribe Now</label> </button>
+                                                <button type="button" class="btn btn_plan btn_subscribe_now" data-plan="20" data-price="10"><label class="price">{{ __('ioasis.Subscribe Now') }}</label> </button>
                                                 @if (Auth::user()->company_plan == "20")
-                                                    <p class="mt-3 alert_current_plan">Current Plan</p>
+                                                    <p class="mt-3 alert_current_plan">{{ __('ioasis.Current Plan') }}</p>
                                                 @endif                                            
                                             </div>
                                         </div>
@@ -396,20 +396,20 @@
                                                                 </span> 
                                                             </div>
                                                         </b> 
-                                                        <sup>/Month</sup>
+                                                        <sup>/{{ __('ioasis.Month') }}</sup>
                                                     </h2>
                                                     <h3 class="subscription-plan__price--secondary">
                                                         <p style="text-align: left; padding: 10px 10px 0px 10px;">
                                                             <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                            <span class="memebership_item_text">Pack 50 logins </span>
+                                                            <span class="memebership_item_text">{{ __('ioasis.Pack 50 logins') }}</span>
                                                         </p>                                   
                                                     </h3>
                                                 </div>
                                             </div>
                                             <div class="text-center mt-3 mb-3">
-                                                <button type="button" data-plan="50" class="btn btn_plan btn_subscribe_now" data-price="20"><label class="price">Subscribe Now</label> </button>
+                                                <button type="button" data-plan="50" class="btn btn_plan btn_subscribe_now" data-price="20"><label class="price">{{ __('ioasis.Subscribe Now') }}</label> </button>
                                                 @if (Auth::user()->company_plan == "50")
-                                                    <p class="mt-3 alert_current_plan">Current Plan</p>
+                                                    <p class="mt-3 alert_current_plan">{{ __('ioasis.Current Plan') }}</p>
                                                 @endif    
                                             </div>
                                         </div>
@@ -431,20 +431,20 @@
                                                                 </span> 
                                                             </div>
                                                         </b> 
-                                                        <sup>/Month</sup>
+                                                        <sup>/{{ __('ioasis.Month') }}</sup>
                                                     </h2>
                                                     <h3 class="subscription-plan__price--secondary">
                                                         <p style="text-align: left; padding: 10px 10px 0px 10px;">
                                                             <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                            <span class="memebership_item_text">Pack unlimited logins</span>
+                                                            <span class="memebership_item_text">{{ __('ioasis.Pack unlimited logins') }}</span>
                                                         </p>                                   
                                                     </h3>
                                                 </div>
                                             </div>
                                             <div class="text-center mt-3 mb-3">
-                                                <button type="button" data-plan="1000" class="btn btn_plan btn_subscribe_now" data-price="30"><label class="price">Subscribe Now</label> </button>
+                                                <button type="button" data-plan="1000" class="btn btn_plan btn_subscribe_now" data-price="30"><label class="price">{{ __('ioasis.Subscribe Now') }}</label> </button>
                                                 @if (Auth::user()->company_plan == "1000")
-                                                    <p class="mt-3 alert_current_plan">Current Plan</p>
+                                                    <p class="mt-3 alert_current_plan">{{ __('ioasis.Current Plan') }}</p>
                                                 @endif    
                                             </div>
                                         </div>
@@ -468,32 +468,32 @@
                                                             </span> 
                                                         </div>
                                                     </b> 
-                                                    <sup>/Month</sup>
+                                                    <sup>/{{ __('ioasis.Month') }}</sup>
                                                 </h2>
                                                 <h3 class="subscription-plan__price--secondary">
                                                     <p style="text-align: left; padding: 10px 10px 0px 10px;">
                                                         <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                        <span class="memebership_item_text">Exclusive offers</span>
+                                                        <span class="memebership_item_text">{{ __('ioasis.Exclusive offers') }}</span>
                                                     </p>
                                                     <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                         <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                        <span class="memebership_item_text">Access to skills monitoring</span>
+                                                        <span class="memebership_item_text">{{ __('ioasis.Access to skills monitoring') }}</span>
                                                     </p>  
                                                     <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                         <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                        <span class="memebership_item_text">Access to the i-Oasis city</span>
+                                                        <span class="memebership_item_text">{{ __('ioasis.Access to the i-Oasis city') }}</span>
                                                     </p>                                             
                                                 </h3>
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="20"><label class="price"><a class="text-white" href="{{ route('login') }}">Subscribe Now</a> </label> </button>
+                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="20"><label class="price"><a class="text-white" href="{{ route('login') }}">{{ __('ioasis.Subscribe Now') }}</a> </label> </button>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="membership_card mt-2">                               
                                     <div class="membership_card_header">
-                                    I-Oasis <span style="color: #ca5050;font-weight:600;">Annual</span> 
+                                    I-Oasis <span style="color: #ca5050;font-weight:600;">{{ __('ioasis.Annual') }}</span> 
                                     </div>
                                     <div class="membership_card_body">
                                         <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
@@ -508,26 +508,26 @@
                                                             </span> 
                                                         </div>
                                                     </b> 
-                                                    <sup>/Month</sup>
+                                                    <sup>/{{ __('ioasis.Month') }}</sup>
                                                 </h2>
                                                 <h3 class="subscription-plan__price--secondary">
                                                     <p style="text-align: left; padding: 10px 10px 0px 10px;">
                                                         <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                        <span class="memebership_item_text">Exclusive offers</span>
+                                                        <span class="memebership_item_text">{{ __('ioasis.Exclusive offers') }}</span>
                                                     </p>
                                                     <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                         <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                        <span class="memebership_item_text">Access to skills monitoring</span>
+                                                        <span class="memebership_item_text">{{ __('ioasis.Access to skills monitoring') }}</span>
                                                     </p>   
                                                     <p style="text-align: left; padding: 0px 10px 0px 10px;">
                                                         <img src="{{ asset('public/assets/img/Icon_check_gold.png') }}" width="22" height="17" caption="false">&nbsp;&nbsp;
-                                                        <span class="memebership_item_text">Access to the i-Oasis city</span>
+                                                        <span class="memebership_item_text">{{ __('ioasis.Access to the i-Oasis city') }}</span>
                                                     </p>                                               
                                                 </h3>
                                             </div>
                                         </div>
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="15"><label class="price"><a class="text-white" href="{{ route('login') }}">Subscribe Now</a></label> </button>
+                                            <button type="button" class="btn btn_plan btn_subscribe_now" data-price="15"><label class="price"><a class="text-white" href="{{ route('login') }}">{{ __('ioasis.Subscribe Now') }}</a></label> </button>
                                         </div>
                                     </div>
                                 </div>
@@ -538,7 +538,7 @@
                 </div>
                 <div class="row mt-5">
                     <div class="col-md-12 text-center">
-                        <a href="/home" class="btn btn_plan">Maybe later</a>
+                        <a href="/home" class="btn btn_plan">{{ __('ioasis.Maybe later') }}</a>
                     </div>
                 </div>
             </div> 
@@ -552,9 +552,9 @@
                         <div class="pay_container">
                             <div class="pay_header">
                                 <button class="btn-transparent btn_back_subscription">
-                                    <i class="far fa-hand-point-left"></i> Back
+                                    <i class="far fa-hand-point-left"></i>{{ __('ioasis.Back') }}
                                 </button>
-                                <h3 class="fs-20 mb-4 text-orange mt-4">Select Payment Method</h3>
+                                <h3 class="fs-20 mb-4 text-orange mt-4">{{ __('ioasis.Select Payment Method') }}</h3>
                                 <label class="btn_radio_container">PayPal
                                     <input type="radio" class="select_payment" name="type" value="1">
                                     <span class="checkmark"></span>
@@ -587,23 +587,23 @@
                                                 <input type="text" class="form-control card-cvc" placeholder="ex.311" size='4'>
                                             </div>
                                             <div class="col-md-4 form-group expiration required">
-                                                <label for="" class="text-white">Expiration Month</label>
+                                                <label for="" class="text-white">{{ __('ioasis.Expiration Month') }}</label>
                                                 <input type="text" class="form-control card-expiry-month" placeholder="MM" size='2'>
                                             </div>
                                             <div class="col-md-4 form-group expiration required">
-                                                <label for="" class="text-white">Expiration Year</label>
+                                                <label for="" class="text-white">{{ __('ioasis.Expiration Year') }}</label>
                                                 <input type="text" class="form-control card-expiry-year" placeholder="YYYY" size='4'>
                                             </div>
                                         </div>
                                     </div>
                                     <div class='form-row row'>
                                         <div class='col-md-12 error form-group hide'>
-                                            <div class='alert-danger alert'>Please correct the errors and try
-                                                again.</div>
+                                            <div class='alert-danger alert'>{{ __('ioasis.Please correct the errors and try
+                                                again') }}.</div>
                                         </div>
                                     </div>
                                     <div class="form-group text-center mt-5">
-                                        <button type="submit" class="btn btn_plan">Pay Now €<span class="btn_pay_now_price"></span></button>
+                                        <button type="submit" class="btn btn_plan">{{ __('ioasis.Pay Now') }} €<span class="btn_pay_now_price"></span></button>
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
                                     <input type="hidden" value="" name="plan" class="pay_plan">
@@ -617,7 +617,7 @@
                                     id="paypal-form">
                                     @csrf                            
                                     <div class="form-group text-center mt-5">
-                                        <button type="submit" class="btn btn_plan">Pay Now €<span class="btn_pay_now_price"></span></button>
+                                        <button type="submit" class="btn btn_plan">{{ __('ioasis.Pay Now') }} €<span class="btn_pay_now_price"></span></button>
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
                                     <input type="hidden" value="" name="plan" class="pay_plan">

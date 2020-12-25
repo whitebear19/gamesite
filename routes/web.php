@@ -26,6 +26,8 @@ Route::get('/game_detail/{game_id}', 'HomeController@game_detail')->name('game_d
 Route::get('/subscription', 'HomeController@subscription')->name('subscription')->middleware('auth');
 Route::get('/confirm', 'HomeController@confirm')->name('confirm')->middleware('auth');
 Route::get('/email/verify/{id}', 'HomeController@verify')->middleware('auth');
+Route::get('lang/change', 'HomeController@change')->name('changeLang');
+
 
 Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
 Route::post('paypal', 'PayPalController@payment')->name('paypal.post');

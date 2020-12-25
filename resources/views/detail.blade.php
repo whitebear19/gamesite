@@ -17,7 +17,7 @@
                                     €{{ $game->price }}
                                 </button>
                                 <button class="btn_game_subscribe">
-                                    Play by subscription
+                                    {{ __('detail.Play by subscription') }}
                                 </button>
                             </div>
                         </div>
@@ -87,7 +87,7 @@
                     <div class="d-flex">
                         <div class="w-100px">
                             <label for="">
-                                COMPATIBLE WITH:
+                                {{ __('detail.COMPATIBLE WITH') }}:
                             </label>
                         </div>
                         <div>
@@ -114,7 +114,7 @@
                     <div class="d-flex mt-4">
                         <div class="w-100px">
                             <label for="">
-                                GENRE:
+                                {{ __('detail.GENRE') }}:
                             </label>
                         </div>
                         <div>
@@ -131,7 +131,7 @@
                     </div>
                     <div class="detail_description mt-4">
                         <h1 class="game_title">
-                            Description
+                            {{ __('detail.Description') }}
                         </h1>
                         <div>
                             <textarea id="game_description" style="background-color: transparent;border:none;box-shadow:none;outline:none;font-family:Arial;line-height:25px;width: 100%;" name="">{{ $game->description }}</textarea>
@@ -142,58 +142,52 @@
                 </div>
                 <div class="col-md-4 col-12">
                     <div class="game_details_text meta-list-block">
-                        <label for="">Game Play</label>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Playing time
-                                </label>
+                        <label for="">{{ __('detail.Game Play') }}</label>
+                        @if ($game->playing_time)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        {{ __('detail.Playing time') }}
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">
+                                            {{ $game->playing_time }}                                       
+                                    </label>
+                                </div>
                             </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->playing_time)
-                                        {{ $game->playing_time }}
-                                    @else
-                                        -
-                                    @endif   
-                                </label>
+                        @endif
+                        @if ($game->scoring)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        {{ __('detail.Scoring') }}
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">
+                                        {{ $game->scoring }} 
+                                    </label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Scoring
-                                </label>
+                        @endif 
+                        @if ($game->num_players)
+                            <div class="d-flex">
+                                <div class="mr-auto">
+                                    <label for="" class="text-grey game_details_text_title">
+                                        {{ __('detail.Number of players') }}
+                                    </label>
+                                </div>
+                                <div class="">
+                                    <label for="" class="game_details_text_content">                                    
+                                        {{ $game->num_players }}                                   
+                                    </label>
+                                </div>
                             </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->scoring)
-                                        {{ $game->scoring }}
-                                    @else
-                                        -
-                                    @endif   
-                                </label>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="mr-auto">
-                                <label for="" class="text-grey game_details_text_title">
-                                    Number of players
-                                </label>
-                            </div>
-                            <div class="">
-                                <label for="" class="game_details_text_content">
-                                    @if ($game->num_players)
-                                        {{ $game->num_players }}
-                                    @else
-                                        -
-                                    @endif
-                                </label>
-                            </div>
-                        </div>
+                        @endif
                     </div>
                     <div class="game_details_text meta-list-block mt-4">
-                        <label for="">Languages</label>
+                        <label for="">{{ __('detail.Languages') }}</label>
                         @php
                             $language = json_decode($game->language);                        
                         @endphp 
@@ -212,12 +206,12 @@
                     </div>
 
                     <div class="game_details_text meta-list-block mt-4">
-                        <p>System requirments</p>
+                        <p>{{ __('detail.System requirments') }}</p>
                         @if ($game->available_os)
                             <div class="d-flex">
                                 <div class="mr-auto">
                                     <label for="" class="text-grey game_details_text_title">
-                                        Available OS
+                                        {{ __('detail.Available OS') }}
                                     </label>
                                 </div>
                                 <div class="text-right">
@@ -231,7 +225,7 @@
                             <div class="d-flex">
                                 <div class="mr-auto">
                                     <label for="" class="text-grey game_details_text_title">
-                                        Available bitness of OS
+                                        {{ __('detail.Available bitness of OS') }}
                                     </label>
                                 </div>
                                 <div class="">
@@ -245,7 +239,7 @@
                             <div class="d-flex">
                                 <div class="mr-auto">
                                     <label for="" class="text-grey game_details_text_title">
-                                        Processor
+                                        {{ __('detail.Processor') }}
                                     </label>
                                 </div>
                                 <div class="">
@@ -259,7 +253,7 @@
                             <div class="d-flex">
                                 <div class="mr-auto">
                                     <label for="" class="text-grey game_details_text_title">
-                                        Memory
+                                        {{ __('detail.Memory') }}
                                     </label>
                                 </div>
                                 <div class="">
@@ -273,7 +267,7 @@
                             <div class="d-flex">
                                 <div class="mr-auto">
                                     <label for="" class="text-grey game_details_text_title">
-                                        DirectX Version
+                                        {{ __('detail.DirectX Version') }}
                                     </label>
                                 </div>
                                 <div class="">
@@ -287,7 +281,7 @@
                             <div class="d-flex">
                                 <div class="mr-auto">
                                     <label for="" class="text-grey game_details_text_title">
-                                        Disk space
+                                        {{ __('detail.Disk space') }}
                                     </label>
                                 </div>
                                 <div class="">
@@ -301,7 +295,7 @@
                             <div class="d-flex">
                                 <div class="mr-auto">
                                     <label for="" class="text-grey game_details_text_title">
-                                        Graphics
+                                        {{ __('detail.Graphics') }}
                                     </label>
                                 </div>
                                 <div class="">
@@ -315,7 +309,7 @@
                             <div class="d-flex">
                                 <div class="mr-auto">
                                     <label for="" class="text-grey game_details_text_title">
-                                        Additional
+                                        {{ __('detail.Additional') }}
                                     </label>
                                 </div>
                                 <div class="">
@@ -328,11 +322,11 @@
                     </div>
 
                     <div class="game_details_text meta-list-block mt-4">
-                        <p>Developer Details</p>
+                        <p>{{ __('detail.Developer Details') }}</p>
                         <div class="d-flex">
                             <div class="mr-auto">
                                 <label for="" class="text-grey game_details_text_title">
-                                    Developer
+                                    {{ __('detail.Developer') }}
                                 </label>
                             </div>
                             <div class="">
@@ -348,7 +342,7 @@
                         <div class="d-flex">
                             <div class="mr-auto">
                                 <label for="" class="text-grey game_details_text_title">
-                                    Contact
+                                    {{ __('detail.Contact') }}
                                 </label>
                             </div>
                             <div class="">
