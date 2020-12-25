@@ -28,6 +28,12 @@ Route::get('/confirm', 'HomeController@confirm')->name('confirm')->middleware('a
 Route::get('/email/verify/{id}', 'HomeController@verify')->middleware('auth');
 Route::get('lang/change', 'HomeController@change')->name('changeLang');
 
+Route::post('/addtocart','HomeController@addtocart')->name('addtocart')->middleware('auth');
+
+Route::get('/orders','HomeController@orders')->name('orders')->middleware('auth');
+Route::get('/profile','HomeController@profile')->name('user.profile')->middleware('auth');
+
+
 
 Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
 Route::post('paypal', 'PayPalController@payment')->name('paypal.post');
@@ -70,11 +76,20 @@ Route::get('/delete_compatible','AdminController@delete_compatible');
 Route::get('/resend_link','HomeController@resend_link');
 
 Route::get('/addcart','HomeController@addcart');
+
 Route::get('/get_addcart','HomeController@get_addcart');
 Route::get('/delete_addcart','HomeController@delete_addcart');
 
 
 Route::post('/create_user','CompanyController@create_user');
+
+Route::post('/update_userinfo','HomeController@update_userinfo');
+
+Route::post('/update_password','HomeController@update_password');
+
+
+
+
 
 
 

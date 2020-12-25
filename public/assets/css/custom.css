@@ -88,14 +88,15 @@ button{outline: none!important;box-shadow: none!important;}
 
 .pos_rel{position: relative;}
 .dropdown-menu{
-    left: -80px;
+    left: -120px;
     right: 0px;
-    width: 150px;
+    width: 200px;
     top: 50px;
     background: #222222;
     border: 1px solid #d59516;
-    padding:5px 0px 0px;
+    padding: 5px 0px 0px;
 }
+
 .dropdown-toggle::after {
     display: none;    
 }
@@ -951,10 +952,10 @@ table{
 }
 .section_pay{
     display: none;
-    min-height: 250px;
+    min-height: 50vh;
 }
 .section_plan{
-    min-height: 250px;
+    min-height: 50vh;
 }
 .btn_resend_link{
     border: none;
@@ -1105,12 +1106,26 @@ table{
 }
 /* library */
 .section_library{
-    min-height: 250px;
+    
+    min-height: 50vh;
     background: #c7c7c7;
 }
 thead td{font-weight: 600;}
-
-
+a.btn_game_subscribe {    
+    padding: 5px 24px;
+}
+/* user profile */
+.userinfo_wrapper{
+    width: 500px;
+    margin: auto;
+    border: 1px solid #423304;
+    padding: 20px;
+    background-color: #222222;
+    color: white;
+}
+.alert-border{
+    border-color: tomato;
+}
 /* ----------------Responsive--------------------------- */
 @media only screen and (max-width: 997px) {
     .site_logo {

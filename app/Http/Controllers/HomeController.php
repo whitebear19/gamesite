@@ -11,6 +11,7 @@ use App\Model\Setting;
 use App\Model\GameCheck;
 use App\User;
 use App;
+use Hash;
 class HomeController extends Controller
 {
     /**
@@ -140,6 +141,27 @@ class HomeController extends Controller
         return view('checkout',compact('page'));
     }
     
+    public function addtocart(Request $request)
+    {
+        $id = $request->get('gid');
+        $row = GameCheck::create([
+            'game_id' => $id,
+            'user_id' => Auth::user()->id,
+            'paid'    => '0',
+        ]);
+        return redirect('/checkout');
+    }
+
+    public function profile(Request $request)
+    {
+        $page = "";
+        return view('profile',compact('page'));
+    }
+    public function orders(Request $request)
+    {
+        
+    }
+
 
     public function change(Request $request)
     {
@@ -154,14 +176,11 @@ class HomeController extends Controller
         {
             return redirect('/confirm');
         }
-        // elseif(empty(Auth::user()->paid))
-        // {
-        //     return redirect('/subscription');
-        // }
+       
         else
         {
             $page = "library";        
-            $games = GameCheck::where('user_id',Auth::user()->id)->where('paid','1')->get();
+            $games = GameCheck::where('user_id',Auth::user()->id)->where('paid','1')->get();            
             return view('library',compact('page','games'));
         }
                
@@ -298,5 +317,77 @@ class HomeController extends Controller
                 'auth' => 'false'
             ]);
         }
-    }    
+    }   
+    
+    public function update_userinfo(Request $request)
+    {
+        if(Auth::check())
+        {
+            $name = $request->get('name');
+            $email = $request->get('email');
+            $is_mail_num = User::where('email',$email)->count();
+            if($is_mail_num > 1)
+            {
+                return response()->json([
+                    'email' => 'false'
+                ]);
+            }
+            elseif($is_mail_num == 1)
+            {
+                if(Auth::user()->email == $email)
+                {
+                    $user = Auth::user();
+                    $user->name = $name;
+                    $user->email = $email;
+                    $user->save();
+                    return response()->json([
+                        'result' => 'true'
+                    ]);
+                }
+                else
+                {
+                    return response()->json([
+                        'email' => 'false'
+                    ]);
+                }
+            }
+            else
+            {
+                $user = Auth::user();
+                    $user->name = $name;
+                    $user->email = $email;
+                    $user->save();
+                    return response()->json([
+                        'result' => 'true'
+                    ]);
+            }
+        }
+        else
+        {
+            return response()->json([
+                'auth' => 'false'
+            ]);
+        }
+    }   
+
+    public function update_password(Request $request)
+    {
+        if(Auth::check())
+        {
+            $password = $request->get('password');
+            $user = Auth::user();
+            $user->password = Hash::make($password);
+            $user->save();
+            return response()->json([
+                'result' => 'true'
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'auth' => 'false'
+            ]);
+        }
+    }   
+    
 }

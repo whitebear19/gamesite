@@ -6,7 +6,7 @@ return [
     'Training' => 'Training',
     'Library' => 'Library',
     'Check Out' => 'Check Out',
-    'Empty add cart' => 'Empty add cart',
+    'Cart is empty' => 'Cart is empty',
     'Sign In' => 'Sign In',
     'Dashboard' => 'Dashboard',
     'Logout' => 'Logout',
@@ -17,4 +17,9 @@ return [
     'Submit' => 'Submit',
     'Follow us on' => 'Follow us on',
     'LANGUAGE' => 'LANGUAGE',
+    'Profile and settings' => 'Profile and settings',
+    'Order history' => 'Order history',
+    'Subscription' => 'Subscription',
+
+    'How do you want to use i-Oasis?' => 'How do you want to use i-Oasis?',
 ];

@@ -21,4 +21,5 @@ return [
     'Developer Details' => 'Developer Details',
     'Developer' => 'Developer',
     'Contact' => 'Contact',    
+    'Add to cart' => 'Add to cart'
 ];

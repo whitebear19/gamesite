@@ -20,50 +20,48 @@
             <div class="container pt-3">
                 <div class="row">
                     <div class="col-md-12">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <td>
-                                        No
-                                    </td>
-                                    <td>
-                                        {{ __('library.Game') }}
-                                    </td>
-                                    <td>
-                                        {{ __('library.Price') }}
-                                    </td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @php
-                                    $i = 1
-                                @endphp
-                                @if ($games)
-                                @foreach ($games as $item)
+                        @if (count($games) > 0)
+                            <table class="table">
+                                <thead>
                                     <tr>
-                                        <td>{{ $i }}</td>
                                         <td>
-                                            <a href="{{ url('game_detail', $item->get_game->id ) }}">{{ $item->get_game->title }}</a>                                            
+                                            No
                                         </td>
                                         <td>
-                                            € {{ $item->get_game->price }}
+                                            {{ __('library.Game') }}
+                                        </td>
+                                        <td>
+                                            {{ __('library.Price') }}
                                         </td>
                                     </tr>
+                                </thead>
+                                <tbody>
                                     @php
-                                        $i+=1
+                                        $i = 1
                                     @endphp
-                                @endforeach
                                     
-                                @else
-                                    <tr>
-                                        <td colspan="3">
-                                            <p>{{ __('library.There is no any purchased yet') }}.</p>
-                                        </td>
-                                    </tr>
-                                @endif
-                                
-                            </tbody>
-                        </table>
+                                    @foreach ($games as $item)
+                                        <tr>
+                                            <td>{{ $i }}</td>
+                                            <td>
+                                                <a href="{{ url('game_detail', $item->get_game->id ) }}">{{ $item->get_game->title }}</a>                                            
+                                            </td>
+                                            <td>
+                                                € {{ $item->get_game->price }}
+                                            </td>
+                                        </tr>
+                                        @php
+                                            $i+=1
+                                        @endphp
+                                    @endforeach   
+                                </tbody>
+                            </table>
+                        @else    
+                            <div class="text-center">
+                                <p class="mt-4">{{ __('library.Your library is empty') }}.</p>
+                            </div>                       
+                                                           
+                        @endif
                     </div>
                 </div>
             </div>

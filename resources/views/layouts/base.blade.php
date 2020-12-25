@@ -79,7 +79,7 @@
                                     {{ __('messages.Check Out') }}
                                 </a>
                                 <a class="dropdown-item empty_addCart" href="#">
-                                    {{ __('messages.Empty add cart') }}
+                                    {{ __('messages.Cart is empty') }}
                                 </a>
                             </div>
                         </li>
@@ -111,8 +111,27 @@
                                     <a class="dropdown-item" href="{{ route('company.dashboard') }}">
                                         {{ __('messages.Dashboard') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('user.profile') }}">
+                                        {{ __('messages.Profile and settings') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('subscription') }}">
+                                        {{ __('messages.Subscription') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('library') }}">
+                                        {{ __('messages.Order history') }}
+                                    </a>
                                 @endif
-
+                                @if (Auth::user()->type == "1") 
+                                    <a class="dropdown-item" href="{{ route('user.profile') }}">
+                                        {{ __('messages.Profile and settings') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('subscription') }}">
+                                        {{ __('messages.Subscription') }}
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('library') }}">
+                                        {{ __('messages.Order history') }}
+                                    </a>
+                                @endif
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">

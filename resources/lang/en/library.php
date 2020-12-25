@@ -2,5 +2,5 @@
 return [
     'Game' => 'Game',
     'Price' => 'Price',
-    'There is no any purchased yet' => 'There is no any purchased yet',    
+    'Your library is empty' => 'Your library is empty',    
 ];

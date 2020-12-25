@@ -1,7 +1,7 @@
 <?php
 return [
     'Virtual reality training with i-Oasis' => 'Virtual reality training with i-Oasis',
-    'Subscribe now' => 'Subscribe now',
+    'Subscribe Now' => 'Subscribe Now',
     'Your next virtual experience awaits' => 'Your next virtual experience awaits',
     'All the best in one subscription' => 'All the best in one subscription',
     'Access exclusive content' => 'Access exclusive content',

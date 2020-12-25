@@ -16,9 +16,18 @@
                                 <button class="btn_game_price mr-20">
                                     €{{ $game->price }}
                                 </button>
-                                <button class="btn_game_subscribe">
-                                    {{ __('detail.Play by subscription') }}
-                                </button>
+                                @guest
+                                    <a href="{{ route('login') }}" class="btn_game_subscribe">
+                                        {{ __('detail.Play by subscription') }}
+                                    </a>
+                                @else                                    
+                                    <form action="{{ route('addtocart') }}" class="d-inline-block" method="post">
+                                    @csrf
+                                        <input type="hidden" name="gid" value="{{ $game->id }}">
+                                        <button type="submit" class="btn_game_subscribe">{{ __('detail.Add to cart') }}</button>
+                                    </form>
+                                @endguest
+                                
                             </div>
                         </div>
                     </div>

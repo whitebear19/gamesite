@@ -3,7 +3,7 @@
 @section('content')
 <div class="">
     <div class="main">       
-        <div class="section-common ioasis_common_section_back_col" style="min-height: 250px;">
+        <div class="section-common ioasis_common_section_back_col" style="min-height: 50vh;">
             <div class="container">               
                 <div class="row">
                     <div class="col-md-12">

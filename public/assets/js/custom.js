@@ -90,6 +90,10 @@ jQuery(function ($) {
       var max_file_number = 10;
       var max_file_number_sub = 10;
       
+      function isEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+      }
       $("#mainImage").change(function() 
       {
           var cur_file_number = 0; 
@@ -771,6 +775,110 @@ jQuery(function ($) {
       });  
       
 
+      $(document).on('click','.btn_update_userinfo',function(){
+        var is_valid = true;
+        var username = $("input[name='name']").val();
+        var email = $("input[name='email']").val();
+        if(username.length < 1)
+        {
+          is_valid = false;
+          $("input[name='name']").addClass('alert-border');
+          $("input[name='name']").focus();
+        }
+        if(email.length > 1)
+        {
+          var is_mail_valid = isEmail(email);
+          if(is_mail_valid)
+          {
+            var data = $(".form_userinfo").serialize();
+            if(is_valid)
+            {
+              $.ajax({
+                url: "/update_userinfo",
+                data: data,
+                dataType: "json",
+                type: "post",              
+                success: function(response){                 
+                  if(response.email == "false")
+                  {
+                    swal({
+                      title: "This email already exsist!",  
+                      text: "Please try other.",                          
+                      type: "error"
+                    }).then(function() {
+                      $("input[name='email']").focus();
+                    });
+                  }
+                  else
+                  {
+                    location.reload();
+                  }
+                }
+              });     
+            }
+            else
+            {
+              return false;
+            }
+                
+          }
+          else
+          {
+            swal({
+              title: "This is not email",  
+              text: "Please confirm again.",                          
+              type: "error"
+            }).then(function() {
+              $("input[name='email']").focus();
+            });
+          }
+        }
+        
+      });
+
+      $(document).on('click','.btn_update_password',function(){
+        var is_valid = true;
+        var password = $("input[name='password']").val();
+        if(password.length < 8)
+        {
+          is_valid = false;
+          swal({
+            title: "The password more than 8",  
+            text: "Please confirm.",                          
+            type: "error"
+          }).then(function() {
+            $("input[name='password']").focus();
+          });
+        }
+        if(is_valid)
+        {                    
+          var data = $(".form_password").serialize();
+          $.ajax({
+            url: "/update_password",
+            data: data,
+            dataType: "json",
+            type: "post",              
+            success: function(response){                 
+              if(response.auth == "false")
+              {
+                location.reload();
+              }
+              else
+              {
+                swal({
+                  title: "Successfully updated",                   
+                  type: "success"
+                }).then(function() {
+                  
+                });
+              }
+            }
+          });         
+         
+          
+        }
+        
+      });
   }());
  
 

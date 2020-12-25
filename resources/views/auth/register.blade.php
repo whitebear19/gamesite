@@ -21,18 +21,18 @@
             <div>
                 <div class="text-field">
                     <label class="label">                   
-                        {{ __('You are a:') }}
+                        {{ __('messages.How do you want to use i-Oasis?') }} :
                     </label>
                     <div class="input-base">                        
                         <div class="row">
-                            <div class="col-md-6">
-                                <label class="btn_radio_container">person
+                            <div class="col-md-12">
+                                <label class="btn_radio_container">for a personal use 
                                     <input type="radio" name="type" checked value="1">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <div class="col-md-6">
-                                <label class="btn_radio_container">company
+                            <div class="col-md-12">
+                                <label class="btn_radio_container">as an administrator of multiple accounts 
                                     <input type="radio" name="type" value="2">
                                     <span class="checkmark"></span>
                                 </label>

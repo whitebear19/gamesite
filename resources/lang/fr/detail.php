@@ -20,5 +20,6 @@ return [
     'Additional' => 'Additionnel',
     'Developer Details' => 'Détails du développeur',
     'Developer' => 'Développeuse',
-    'Contact' => 'Contact',    
+    'Contact' => 'Contact',  
+    'Add to cart' => 'Ajouter au chariot',  
 ];
