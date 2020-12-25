@@ -60,6 +60,9 @@
                                         </div>
                                         <div class="text-center mt-3 mb-3">
                                             <button type="button" class="btn btn_plan btn_subscribe_now" data-price="20"><label class="price">{{ __('ioasis.Subscribe Now') }}</label> </button>
+                                            @if (Auth::user()->company_plan == "20")
+                                                <p class="mt-3 alert_current_plan">{{ __('ioasis.Current Plan') }}</p>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -100,6 +103,9 @@
                                         </div>
                                         <div class="text-center mt-3 mb-3">
                                             <button type="button" class="btn btn_plan btn_subscribe_now" data-price="15"><label class="price">{{ __('ioasis.Subscribe Now') }}</label> </button>
+                                            @if (Auth::user()->company_plan == "15")
+                                                <p class="mt-3 alert_current_plan">{{ __('ioasis.Current Plan') }}</p>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
@@ -284,6 +290,7 @@
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
                                     <input type="hidden" value="" name="plan" class="pay_plan">
+                                    <input type="hidden" name="where" value="s">
                                 </form>
                             </div>
                             <div class="pay_body pay_paypal mt-5">    
@@ -298,6 +305,7 @@
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
                                     <input type="hidden" value="" name="plan" class="pay_plan">
+                                    <input type="hidden" name="where" value="s">
                                 </form>
                             </div>
                         </div>

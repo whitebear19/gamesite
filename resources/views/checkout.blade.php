@@ -120,6 +120,7 @@
                                         <button type="submit" class="btn btn_plan">{{ __('ioasis.Pay Now') }} €<span class="btn_pay_now_price"></span></button>
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
+                                    <input type="hidden" name="where" value="c">
                                 </form>
                             </div>
                             <div class="pay_body pay_paypal mt-5">    
@@ -133,6 +134,7 @@
                                         <button type="submit" class="btn btn_plan">{{ __('ioasis.Pay Now') }} €<span class="btn_pay_now_price"></span></button>
                                     </div>
                                     <input type="hidden" value="" name="price" class="pay_price">
+                                    <input type="hidden" name="where" value="c">
                                 </form>
                             </div>
                         </div>

@@ -43,11 +43,21 @@ class PayPalController extends Controller
         $data['total'] = $price;
         
         $user = Auth::user();
-        if(!empty($request->get('plan')))
-        {            
-            $user->company_plan = $request->get('plan');                 
-            $user->save();    
+        $where = $request->get('where');
+        if($where == "s")
+        {
+            if(!empty($request->get('plan')))
+            {            
+                $user->company_plan = $request->get('plan');                 
+                $user->save();    
+            }
+            else
+            {
+                $user->company_plan = $price;                 
+                $user->save();   
+            }
         }
+        
 
         $provider = new ExpressCheckout;
   
@@ -82,7 +92,7 @@ class PayPalController extends Controller
 
         if (in_array(strtoupper($response['ACK']), ['SUCCESS', 'SUCCESSWITHWARNING'])) {
             $user = Auth::user();
-            if($user->paid != "1")
+            if(!empty($user->company_plan))
             {
                 $user->paid = "1";                  
                 $user->save();    

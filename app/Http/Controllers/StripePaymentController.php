@@ -30,28 +30,38 @@ class StripePaymentController extends Controller
             if($temp->status == "succeeded")
             {  
                 $user = Auth::user();
-                $user->paid = "1";
-                $user->company_plan = $request->get('plan');
-                $user->save();    
+                
+                $where = $request->get('where');
 
-                if($user->paid != "1")
+                if($where == "s")
                 {
+                    
                     $user->paid = "1";
                     if(!empty($request->get('plan')))
                     {
                         $user->company_plan = $request->get('plan');
-                    }            
-                    $user->save();    
+                    }      
+                    else
+                    {
+                        $user->company_plan = $price;
+                    }      
+                    $user->save();  
+                    Session::flash('success', 'Payment successful!');      
+                    return redirect('/subscription');  
+                    
                 }
-
-                $rows = GameCheck::where('user_id',Auth::user()->id)->where('paid','0')->get();
-                foreach($rows as $item)
+                else
                 {
-                    $item->paid="1";
-                    $item->save();
-                }
-                Session::flash('success', 'Payment successful!');      
-                return redirect('/library');
+                    $rows = GameCheck::where('user_id',Auth::user()->id)->where('paid','0')->get();
+                    foreach($rows as $item)
+                    {
+                        $item->paid="1";
+                        $item->save();
+                    }
+                    Session::flash('success', 'Payment successful!');      
+                    return redirect('/library');
+                }                
+                
             }
             else
             {
