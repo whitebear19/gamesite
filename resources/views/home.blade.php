@@ -270,7 +270,9 @@
                                                                             @php
                                                                             $ext =  explode('.', $images[$i])
                                                                             @endphp
-                                                                           {{ $ext[1] }}
+                                                                           
+                                                                                <img class="radius_left-right" src="{{ asset('public/upload/game/'.$images[$i]) }}" alt="" srcset="">
+                                                                            
                                                                         </div>
                                                                     @endfor
                                                                 </div>
@@ -327,7 +329,16 @@
                                                                         @php
                                                                             $compatible_with = json_decode($item->compatible_with); 
                                                                         @endphp 
-                                                                       
+                                                                        @for ($i = 0; $i < count($compatible_with); $i++)    
+                                                                            
+                                                                            @php
+                                                                                $src = \App\Model\Compatible::find($compatible_with[$i]);
+                                                                            @endphp      
+                                                                            @if (!empty($src))                                                                                                                                              
+                                                                                <img  src="{{ asset('public/upload/game/compatible/'.$src->img) }}" alt="">    
+                                                                            @endif 
+
+                                                                        @endfor
                                                                     </div>
                                                                 </div>
                                                             </div>
