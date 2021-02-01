@@ -150,7 +150,104 @@
                             
                         </div>
                     </div>
+                    <div class="area_game_item pt-70">
+                        <p class="fs-22"><b>{{ __('home.Coming Soon') }}</b></p>
+                        <div class="row">
+                            @if (count($soon)>0)
+                                @foreach ($soon as $item)
+                                    <div class="col-md-4" style="min-height: 250px;">
+                                        <div class="pos_rel">
+                                            <div class="product_item product-item-info">
+                                                
+                                                <span>                                                        
+                                                    <a href="{{ url('game_detail', $item->id ) }}">
+                                                        @php
+                                                            $images = json_decode($item->main_imgs);                        
+                                                        @endphp 
+                                                        
+
+                                                        <div id="" class="carousel slide" data-ride="carousel">
+                                                            <div class="carousel-inner">
+                                                                @for ($i = 0; $i < count($images); $i++)                                                                    
+                                                                    <div class="carousel-item game_img_item @if($i == 0) active @endif">
+                                                                        @php
+                                                                        $ext =  explode('.', $images[$i])
+                                                                        @endphp
+                                                                        @if ($ext[1] == 'avi' or $ext[1] == 'mp4')
+                                                                            <video class="radius_left-right" src="{{ asset('public/upload/game/'.$images[$i]) }}" controls autoplay></video>
+                                                                        @else
+                                                                            <img class="radius_left-right" src="{{ asset('public/upload/game/'.$images[$i]) }}" alt="" srcset="">
+                                                                        @endif
+                                                                    </div>
+                                                                @endfor
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </span>                                        
+                                                
+                                                <div class="actions-primary coming_soon_btn_wishlist h-50p">
+                                                    <div class="text-center w-100 pos_rel">
+                                                        <button class="btn_add_wishlist">
+                                                            {{ __('home.ADD WISHLIST') }}
+                                                        </button>
+                                                    </div>                                            
+                                                </div>
+                                                <div class="product-item-title">
+                                                    <strong class="product name product-item-name text-center">
+                                                        <p class="coming_soon_text">{{ __('home.Available') }}: {{ $item->expected_date }}</p>
+                                                        <a href="" class="product-item-link "> {{ $item->title }} </a> 
+                                                    </strong> 
+                                                </div>
+                                                
+                                                <div class="product details product-item-details">
                                                     
+                                                    <div class="product-item-genres">
+                                                        @if ($item->cat_main)
+                                                            <div class="product-item-genre">{{ $item->get_main->name }}</div>
+                                                        @endif                                                     
+                                                    </div>
+                                                    <div class="product-item-inner">
+                                                        <div class="product actions">
+                                                            <div class="actions-tertiary">
+                                                                <div class="product-item-icons">
+                                                                    <div class="product-item-icons-os">
+                                                                        <span class="icon icon-os-windows" aria-hidden="true"></span> 
+                                                                    </div>
+                                                                    <div class="product-item-icons-headset">
+                                                                        @php
+                                                                            $compatible_with = json_decode($item->compatible_with); 
+                                                                        @endphp 
+                                                                        @for ($i = 0; $i < count($compatible_with); $i++)    
+                                                                            @php
+                                                                                $src = \App\Model\Compatible::find($compatible_with[$i]);
+                                                                            @endphp      
+                                                                            @if (!empty($src))                                                                                                                                              
+                                                                                <img  src="{{ asset('public/upload/game/compatible/'.$src->img) }}" alt="">    
+                                                                            @endif 
+                                                                        @endfor
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="product-item-coming-soon">
+                                                    <span>{{ __('home.Coming Soon') }}</span>
+                                                </div>
+                                            </div>
+                                        </div>                                    
+                                    </div>   
+                                @endforeach
+                            @else
+                                <div class="col-md-12">
+                                    <p>{{ __('home.No coming soon game registered yet!') }}</p>
+                                </div>
+                            @endif
+                                                     
+                        </div>
+                        
+                    </div>
+                                                        
                 </div>
             </div>
         </div>
