@@ -74,7 +74,83 @@
                                  
                 </div>
                 <div class="col-md-9">
-                                                   
+                    <div class="area_staff_picks">
+                        <p class="fs-22"><b>{{ __('home.MOST POPULAR') }}</b></p>
+                        <div class="row">
+                            @if (count($most)>0)
+                                @php
+                                    $item = $most[0]    
+                                @endphp
+                                <div class="col-md-8">                                        
+                                    
+                                    <a href="{{ url('game_detail', $item->id ) }}">
+                                        @php
+                                            $images = json_decode($item->main_imgs);                        
+                                        @endphp
+
+                                        <div class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                @for ($i = 0; $i < count($images); $i++)                                                                    
+                                                    <div class="carousel-item @if($i == 0) active @endif">
+                                                        @php
+                                                            $ext =  explode('.', $images[$i])
+                                                        @endphp
+                                                        @if ($ext[1] == 'avi' or $ext[1] == 'mp4')
+                                                            <video class="w-100" src="{{ asset('public/upload/game/'.$images[$i]) }}" controls autoplay></video>
+                                                        @else
+                                                            <img class="w-100" src="{{ asset('public/upload/game/'.$images[$i]) }}" alt="" srcset="">
+                                                        @endif
+                                                    </div>
+                                                @endfor
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div> 
+                            
+                                <div class="col-md-4">                                    
+                                    @for ($j = 1; $j < 3; $j++)
+                                        @if (!empty($most[$j]))
+                                            @php
+                                                $item = $most[$j];
+                                            @endphp
+                                        
+                                            <a href="{{ url('game_detail', $item->id ) }}">
+                                                @php
+                                                    $images = json_decode($item->main_imgs);                        
+                                                @endphp
+
+                                                <div class="carousel slide" data-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        @for ($i = 0; $i < count($images); $i++)                                                                    
+                                                            <div class="carousel-item @if($i == 0) active @endif">
+                                                                @php
+                                                                    $ext =  explode('.', $images[$i])
+                                                                @endphp
+                                                                @if ($ext[1] == 'avi' or $ext[1] == 'mp4')
+                                                                    <video class="w-100" src="{{ asset('public/upload/game/'.$images[$i]) }}" controls autoplay></video>
+                                                                @else
+                                                                    <img class="w-100" src="{{ asset('public/upload/game/'.$images[$i]) }}" alt="" srcset="">
+                                                                @endif
+                                                            </div>
+                                                        @endfor
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        @endif 
+                                    @endfor
+                                          
+                                       
+                                                        
+                                </div>
+                            @else
+                                <div class="col-md-12">
+                                    <p>{{ __('home.No most popular registered yet!') }}</p>
+                                </div>
+                            @endif  
+                            
+                        </div>
+                    </div>
+                                                    
                 </div>
             </div>
         </div>
