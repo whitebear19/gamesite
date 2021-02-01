@@ -223,8 +223,10 @@
                                                                                 @php
                                                                                     $src = \App\Model\Compatible::find($compatible_with[$i]);
                                                                                 @endphp      
-                                                                                @if (!empty($src))                                                                                                                                              
-                                                                                    <img  src="{{ asset('public/upload/game/compatible/'.$src->img) }}" alt="">    
+                                                                                @if (!empty($src))
+                                                                                                                                                                                                                                                                                @if(file_exists('public/upload/game/compatible/'.$src->img))
+                                                                                        <img  src="{{ asset('public/upload/game/compatible/'.$src->img) }}" alt="">     
+                                                                                    @endif  
                                                                                 @endif 
                                                                             @endfor
                                                                         @endif
