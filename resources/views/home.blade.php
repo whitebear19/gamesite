@@ -265,18 +265,21 @@
 
                                                             <div id="" class="carousel slide" data-ride="carousel">
                                                                 <div class="carousel-inner">
-                                                                    @for ($i = 0; $i < count($images); $i++)                                                                    
-                                                                        <div class="carousel-item game_img_item @if($i == 0) active @endif">
-                                                                            @php
-                                                                            $ext =  explode('.', $images[$i])
-                                                                            @endphp
-                                                                            @if ($ext[1] == 'avi' or $ext[1] == 'mp4')
-                                                                                <video class="radius_left-right" src="{{ asset('public/upload/game/'.$images[$i]) }}" controls autoplay></video>
-                                                                            @else
-                                                                                <img class="radius_left-right" src="{{ asset('public/upload/game/'.$images[$i]) }}" alt="" srcset="">
-                                                                            @endif
-                                                                        </div>
-                                                                    @endfor
+                                                                    @isset($item->main_imgs)
+                                                                        @for ($i = 0; $i < count($images); $i++)                                                                    
+                                                                            <div class="carousel-item game_img_item @if($i == 0) active @endif">
+                                                                                @php
+                                                                                $ext =  explode('.', $images[$i])
+                                                                                @endphp
+                                                                                @if ($ext[1] == 'avi' or $ext[1] == 'mp4')
+                                                                                    <video class="radius_left-right" src="{{ asset('public/upload/game/'.$images[$i]) }}" controls autoplay></video>
+                                                                                @else
+                                                                                    <img class="radius_left-right" src="{{ asset('public/upload/game/'.$images[$i]) }}" alt="" srcset="">
+                                                                                @endif
+                                                                            </div>
+                                                                        @endfor
+                                                                    @endisset
+                                                                    
                                                                 </div>
                                                             </div>
                                                         </a>
@@ -331,7 +334,18 @@
                                                                         @php
                                                                             $compatible_with = json_decode($item->compatible_with); 
                                                                         @endphp 
-                                                                        {{ $item->compatible_with }}
+                                                                        @isset($item->compatible_with)
+                                                                            @for ($i = 0; $i < count($compatible_with); $i++)    
+                                                                                
+                                                                                @php
+                                                                                    $src = \App\Model\Compatible::find($compatible_with[$i]);
+                                                                                @endphp      
+                                                                                @if (!empty($src))                                                                                                                                              
+                                                                                    <img  src="{{ asset('public/upload/game/compatible/'.$src->img) }}" alt="">    
+                                                                                @endif 
+
+                                                                            @endfor
+                                                                        @endisset
                                                                         
                                                                     </div>
                                                                 </div>
