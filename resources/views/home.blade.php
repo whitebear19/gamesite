@@ -334,7 +334,7 @@
                                                                         @php
                                                                             $compatible_with = json_decode($item->compatible_with); 
                                                                         @endphp 
-                                                                        @isset($item->compatible_with)
+                                                                        @if(!empty($item->compatible_with))
                                                                             {{ $item->compatible_with }}
                                                                         @endisset
                                                                         
