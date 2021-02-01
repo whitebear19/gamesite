@@ -47,6 +47,7 @@ class HomeController extends Controller
         $banners_id = $latest->id;
         $category = MainCategory::all();
         $compatible = Compatible::all();
+        dd($games);
         return view('home',compact('page','games','category','banners','soon','most','compatible','banners_id'));
     }
 
