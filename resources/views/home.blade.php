@@ -334,8 +334,8 @@
                                                                         @php
                                                                             $compatible_with = json_decode($item->compatible_with); 
                                                                         @endphp 
-                                                                        @if(!empty($item->compatible_with))
-                                                                            {{ $item->compatible_with }}
+                                                                        @if($item->compatible_with == null)
+                                                                            {{ $item->compatible_with }} test
                                                                         @endisset
                                                                         
                                                                     </div>
