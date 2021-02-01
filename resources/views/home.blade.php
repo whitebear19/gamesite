@@ -262,12 +262,8 @@
                                                                 $images = json_decode($item->main_imgs);                        
                                                             @endphp 
                                                             
-
-                                                            <div id="" class="carousel slide" data-ride="carousel">
-                                                                <div class="carousel-inner">
-                                                                   {{ $images }}
-                                                                </div>
-                                                            </div>
+                                                            {{ count($images) }}
+                                                            
                                                         </a>
                                                     </span>                                         
                                                 </a>
