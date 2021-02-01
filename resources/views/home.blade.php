@@ -270,9 +270,11 @@
                                                                             @php
                                                                             $ext =  explode('.', $images[$i])
                                                                             @endphp
-                                                                            
+                                                                            @if ($ext[1] == 'avi' or $ext[1] == 'mp4')
+                                                                                <video class="radius_left-right" src="{{ asset('public/upload/game/'.$images[$i]) }}" controls autoplay></video>
+                                                                            @else
                                                                                 <img class="radius_left-right" src="{{ asset('public/upload/game/'.$images[$i]) }}" alt="" srcset="">
-                                                                            
+                                                                            @endif
                                                                         </div>
                                                                     @endfor
                                                                 </div>
