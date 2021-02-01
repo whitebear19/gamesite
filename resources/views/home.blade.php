@@ -266,7 +266,12 @@
                                                             <div id="" class="carousel slide" data-ride="carousel">
                                                                 <div class="carousel-inner">
                                                                     @for ($i = 0; $i < count($images); $i++)                                                                    
-                                                                        test
+                                                                        <div class="carousel-item game_img_item @if($i == 0) active @endif">
+                                                                            @php
+                                                                            $ext =  explode('.', $images[$i])
+                                                                            @endphp
+                                                                            test
+                                                                        </div>
                                                                     @endfor
                                                                 </div>
                                                             </div>
