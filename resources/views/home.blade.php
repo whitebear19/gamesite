@@ -54,7 +54,31 @@
         </div>
     @endif
     
-    
+    <div class="main py-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="select_service">
+                        
+                        <div>
+                            <p class="fs-16 mb-0"><b>{{ __('home.GENRE') }}</b></p>
+                            <ul class="mb-0 ul_select_filter">
+                                @foreach ($category as $item)
+                                    <li class="mt-2 mb-2 text-left">                                                            
+                                        <button class="btn_transparent btn_select_filter text-left" data-type="1" data-id="{{ $item->id }}">{{ $item->name }}</button>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>       
+                    </div>
+                                 
+                </div>
+                <div class="col-md-9">
+                                                   
+                </div>
+            </div>
+        </div>
+    </div>  
 </div>
 <form action="{{ route('games') }}" method="get" class="form_select_sortby">
     <input type="hidden" value="" name="type">
