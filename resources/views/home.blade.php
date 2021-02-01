@@ -331,6 +331,7 @@
                                                                         @php
                                                                             $compatible_with = json_decode($item->compatible_with); 
                                                                         @endphp 
+                                                                        {{ $item->compatible_with }}
                                                                         
                                                                     </div>
                                                                 </div>
