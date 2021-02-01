@@ -270,7 +270,7 @@
                                                                             @php
                                                                             $ext =  explode('.', $images[$i])
                                                                             @endphp
-                                                                           {{ $images[$i] }}
+                                                                           {{ $ext[1] }}
                                                                         </div>
                                                                     @endfor
                                                                 </div>
