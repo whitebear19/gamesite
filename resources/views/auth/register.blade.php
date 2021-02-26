@@ -4,13 +4,13 @@
     <div class="auth_body">
         <div class="">
             <label for="" class="auth_body_title">
-                {{ __('Register') }}
+                {{ __('auth.Register') }}
             </label>
         </div>
         <div class="line text-right pos_rel">   
             <hr>         
             <a href="{{ route('login') }}" class="auth_which">
-                Login
+                {{ __('auth.Login') }}
             </a>
         </div>
         
@@ -21,18 +21,18 @@
             <div>
                 <div class="text-field">
                     <label class="label">                   
-                        {{ __('messages.How do you want to use i-Oasis?') }} :
+                        {{ __('auth.How do you want to use i-Oasis?') }} :
                     </label>
                     <div class="input-base">                        
                         <div class="row">
                             <div class="col-md-12">
-                                <label class="btn_radio_container">for a personal use 
+                                <label class="btn_radio_container">{{ __('auth.for a personal use') }}
                                     <input type="radio" name="type" checked value="1">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
                             <div class="col-md-12">
-                                <label class="btn_radio_container">as an administrator of multiple accounts 
+                                <label class="btn_radio_container">{{ __('auth.as an administrator of multiple accounts') }}
                                     <input type="radio" name="type" value="2">
                                     <span class="checkmark"></span>
                                 </label>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="text-field">
                     <label class="label">                   
-                        {{ __('Name') }}
+                        {{ __('auth.Name') }}
                     </label>
                     <div class="input-base">                        
                         <input id="name" type="text" class="input form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -54,22 +54,22 @@
                     </div>
                 </div>
                 <div class="text-field">
-                    <label class="label">                   
-                        {{ __('E-Mail Address') }}
+                    <label class="label">   
+                        {{ __('auth.E-Mail Address') }}
                     </label>
                     <div class="input-base">                        
                         <input id="email" type="email" class="input form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="text-field">
-                    <label class="label">                   
-                        {{ __('Password') }}
+                    <label class="label">    
+                        {{ __('auth.Password') }}
                     </label>
                     <div class="input-base">
                         <input id="password" type="password" class="input form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
@@ -82,8 +82,8 @@
                     </div>
                 </div>
                 <div class="text-field">
-                    <label class="label">                   
-                        {{ __('Confirm Password') }}
+                    <label class="label">  
+                        {{ __('auth.Confirm Password') }}
                     </label>
                     <div class="input-base">
                         <input id="password-confirm" type="password" class="input form-control" name="password_confirmation" required autocomplete="new-password">
@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <div class="text-center mt-20">
-                    <button class="btn_auth" type="submit">{{ __('Register') }}</button>
+                    <button class="btn_auth" type="submit">{{ __('auth.Register') }}</button>
                 </div>
             </div>
         </form>
@@ -104,7 +104,7 @@
         <br>
         <div>
             <p class="fs-14">
-                By logging in, you agree to the account's <a href="">Terms of Service</a>. View <a href="">Privacy Policy</a>.
+                {{ __("auth.By logging in, you agree to the account's") }} <a href="">{{ __("auth.Terms of Service") }}</a>. {{ __("auth.View") }} <a href="">{{ __("auth.Privacy Policy") }}</a>.
             </p>
         </div>
     </div>

@@ -27,25 +27,25 @@
                             <img class="auth_logo" src="{{ asset('public/assets/img/logo.png') }}" alt="">
                         </a>
                         
-                        <p class="text-white mt-4">
-                            Get the best experience by subscribing to i-Oasis
+                        <p class="text-white mt-4">                            
+                            {{ __('auth.Get the best experience by subscribing to i-Oasis') }}
                         </p>
                     </div>                    
                     <div class="auth_leftside_body mt-4">
                         <ul>
                             <li>
                                 <p>
-                                    Exclusive content
+                                    {{ __('auth.Exclusive content') }}
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    Skills monitoring
+                                    {{ __('auth.Skills monitoring') }}
                                 </p>
                             </li>
                             <li>
                                 <p>
-                                    Discover the i-oasis city
+                                    {{ __('auth.Discover the i-oasis city') }}
                                 </p>
                             </li>                           
                         </ul>

@@ -209,9 +209,9 @@
                 <div class="col-md-4">
                     <div class="text-center">
                         <label for="" class="text-white"><b>{{ __('messages.LANGUAGE') }}</b></label>
-                        <select name="" class="sel_language changeLang" id="">                            
+                        <select name="" class="sel_language changeLang" id="">   
+                            <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>Français</option>
                             <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                            <option value="fr" {{ session()->get('locale') == 'fr' ? 'selected' : '' }}>France</option>
                         </select>
                     </div>
                     <div class="text-center mt-resp">

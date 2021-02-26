@@ -346,7 +346,7 @@
                                 @elseif(Auth::user()->type == '2')
                                     <div class="membership_card mt-2">
                                         <div class="membership_card_header">
-                                            I-Oasis Mensual
+                                            {{ __('ioasis.I-Oasis Mensual') }}
                                         </div>
                                         <div class="membership_card_body">
                                             <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
@@ -381,7 +381,7 @@
                                     </div>
                                     <div class="membership_card mt-2">
                                         <div class="membership_card_header">
-                                            I-Oasis Mensual
+                                            {{ __('ioasis.I-Oasis Mensual') }}
                                         </div>
                                         <div class="membership_card_body">
                                             <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
@@ -416,7 +416,7 @@
                                     </div>
                                     <div class="membership_card mt-2">
                                         <div class="membership_card_header">
-                                            I-Oasis Mensual
+                                            {{ __('ioasis.I-Oasis Mensual') }}
                                         </div>
                                         <div class="membership_card_body">
                                             <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
@@ -453,7 +453,7 @@
                             @else
                                 <div class="membership_card mt-2">
                                     <div class="membership_card_header">
-                                        I-Oasis Mensual
+                                        {{ __('ioasis.I-Oasis Mensual') }}
                                     </div>
                                     <div class="membership_card_body">
                                         <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">
@@ -493,7 +493,7 @@
                                 </div>
                                 <div class="membership_card mt-2">                               
                                     <div class="membership_card_header">
-                                    I-Oasis <span>{{ __('ioasis.Annual') }}</span> 
+                                    {{ __('ioasis.I-Oasis Annual') }}
                                     </div>
                                     <div class="membership_card_body">
                                         <div class="subscription-plan__content--monthly subscription-plan__content" tabindex="-1">

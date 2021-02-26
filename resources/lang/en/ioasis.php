@@ -12,6 +12,7 @@ return [
     'There are no limitations, and always something new to enjoy' => 'There are no limitations, and always something new to enjoy',
     'Your choice of type of headset' => 'Your choice of type of headset',
     'I-Oasis Mensual' => 'I-Oasis Mensual',
+    'I-Oasis Annual' => 'I-Oasis Annual',   
     'Month' => 'Month',
     'Exclusive offers' => 'Exclusive offers',
     'Access to skills monitoring' => 'Access to skills monitoring',
