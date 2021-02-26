@@ -22,6 +22,8 @@ class HomeController extends Controller
     public function __construct()
     {
         $mail = '';
+        App::setLocale('fr');
+        session()->put('locale', 'fr');  
     }
 
     /**
