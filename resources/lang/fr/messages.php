@@ -3,11 +3,11 @@
 return [
     'Home' => 'Accueil',
     'Subscribe now' => 'Abonnez-vous maintenant',
-    'Training' => 'Entraînement',
+    'Training' => 'Formation',
     'Library' => 'Bibliothèque',
     'Check Out' => 'Check-out',
     'Cart is empty' => 'Le chariot est vide',
-    'Sign In' => 'Sign In',
+    'Sign In' => 'S’identifier',
     'Dashboard' => 'Tableau de bord',
     'Logout' => 'Se déconnecter',
     'Contact Us' => 'Nous contacter',
@@ -21,5 +21,6 @@ return [
     'Order history' => 'Historique des commandes',
     'Subscription' => 'Abonnement',
 
-    'How do you want to use i-Oasis?' => 'Comment souhaitez-vous utiliser i-Oasis?'
+    'How do you want to use i-Oasis?' => 'Comment souhaitez-vous utiliser i-Oasis?',
+    'Search' => 'Rechercher',
 ];

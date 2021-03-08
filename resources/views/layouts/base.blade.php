@@ -59,7 +59,7 @@
                             <a class="nav-link" style="color: #d59516;font-weight: 600;"  href="{{ route('subscription') }}">{{ __('messages.Subscribe now') }}</a>
                         @endif
                     @endif
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control mr-sm-2" type="search" placeholder="{{ __('messages.Search')}}" aria-label="Search">
                     <button class="btn_transparent text-grey" type="button"><i class="fas fa-search"></i></button>
                 </form>
             </div>  

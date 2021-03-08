@@ -105,9 +105,9 @@
                                             <label for="" class="mr-1">{{ __('games.Sort by') }}</label>
                                        
                                             <select name="sort" class="select_sortby" id="">
-                                                <option value="az" @if ($sort == 'az') selected @endif>Name A-Z</option>
-                                                <option value="ph" @if ($sort == 'ph') selected @endif>Price High to Low</option>
-                                                <option value="pl" @if ($sort == 'pl') selected @endif>Price Low to High</option>
+                                                <option value="az" @if ($sort == 'az') selected @endif>{{ __('games.Name A-Z') }}</option>
+                                                <option value="ph" @if ($sort == 'ph') selected @endif>{{ __('games.Name Price High to Low') }}</option>
+                                                <option value="pl" @if ($sort == 'pl') selected @endif>{{ __('games.Name Price Low to High') }}</option>
                                             </select>
                                         
                                         

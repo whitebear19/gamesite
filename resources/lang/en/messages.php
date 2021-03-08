@@ -22,4 +22,5 @@ return [
     'Subscription' => 'Subscription',
 
     'How do you want to use i-Oasis?' => 'How do you want to use i-Oasis?',
+    'Search' => 'Search',
 ];
