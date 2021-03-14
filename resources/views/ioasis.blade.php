@@ -1,4 +1,11 @@
 @extends('layouts.base')
+@php
+    $domain = " | i-oasis";
+    $title = __('ioasis.main').$domain;
+@endphp
+@section('title', $title)
+@section('meta_keywords', $title)
+@section('meta_description', $title)
 
 @section('content')
 <div class="">

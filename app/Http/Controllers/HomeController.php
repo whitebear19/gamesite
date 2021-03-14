@@ -22,6 +22,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $mail = '';
+        $contact_mail = 'info@i-oasis.fr';
         App::setLocale('fr');
         session()->put('locale', 'fr');  
     }
@@ -392,4 +393,19 @@ class HomeController extends Controller
         }
     }   
     
+    public function contact(Request $request)
+    {
+        $name = $request->get('name');
+        $email = $request->get('email');
+        $message = $request->get('message');
+
+        $data["name"] = $name;
+        $data["email"] = $email;
+        $data["message"] = $message;
+
+        \Mail::to("info@i-oasis.fr")->send(new \App\Mail\Contact($data));
+        return response()->json([
+            'result' => 'true'
+        ]);
+    }
 }

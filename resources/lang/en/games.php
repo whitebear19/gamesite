@@ -11,4 +11,5 @@ return [
     'Name A-Z' => 'Name A-Z',
     'Name Price High to Low' => 'Name Price High to Low',
     'Name Price Low to High' => 'Name Price Low to High',
+    'Games' => 'Games',
 ];

@@ -1,11 +1,11 @@
 <?php
 return [
-    'Play by subscription' => 'Jouez par abonnement',
+    'Play by subscription' => 'S’entraîner',
     'COMPATIBLE WITH' => 'COMPATIBLE AVEC',
     'GENRE' => 'GENRE',
-    'Description' => 'La description',
-    'Game Play' => 'Jouer au jeu',
-    'Playing time' => 'La recréation',
+    'Description' => 'Description',
+    'Game Play' => 'Caractéristiques',
+    'Playing time' => 'Durée du module',
     'Scoring' => 'Notation',
     'Number of players' => 'Nombre de joueurs',
     'Languages' => 'Langues',
@@ -19,7 +19,7 @@ return [
     'Graphics' => 'Graphique',
     'Additional' => 'Additionnel',
     'Developer Details' => 'Détails du développeur',
-    'Developer' => 'Développeuse',
+    'Developer' => 'Développeur',
     'Contact' => 'Contact',  
     'Add to cart' => 'Ajouter au chariot',  
 ];

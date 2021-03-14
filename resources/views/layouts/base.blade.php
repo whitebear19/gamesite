@@ -20,7 +20,13 @@
     <script src="{{ asset('public/assets/js/autosize.js') }}"></script>   
     <script src="https://kit.fontawesome.com/38c20fcb98.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <title>{{ config('app.name', 'Game') }}</title>
+   
+   
+    <title>@yield('title','Game')</title>
+    <meta name="keywords" content="@yield('meta_keywords','i-oasis')">
+    <meta name="description" content="@yield('meta_description','i-oasis')">
+       
+    
 </head>
 <body>     
     <nav class="navbar navbar-expand-lg navbar-light bg-dark">
@@ -157,20 +163,21 @@
             <div class="row">
                 <div class="col-md-4">
                     <div>
-                        <form action="">
+                        <form action="" class="form_contact">
+                        @csrf    
                             <div class="contactus">                           
                                 <div class="contactus_title">
                                     <p class="fs-30">{{ __('messages.Contact Us') }}</p>
                                 </div>
                                 <div class="contactus_body">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="{{ __('messages.Your name') }}">
+                                        <input type="text" name="name" class="form-control required" placeholder="{{ __('messages.Your name') }}">
                                     </div>
                                     <div class="form-group">
-                                         <input type="text" class="form-control" placeholder="{{ __('messages.Your Email') }}">
+                                        <input type="text" name="email" class="form-control required" placeholder="{{ __('messages.Your Email') }}">
                                      </div>
                                      <div class="form-group">
-                                         <textarea type="text" class="form-control" rows="5" placeholder="{{ __('messages.Your message') }}"></textarea>
+                                         <textarea type="text" name="message" class="form-control required" rows="5" placeholder="{{ __('messages.Your message') }}"></textarea>
                                      </div>
                                      <div class="form-group text-center">
                                          <button type="button" class="btn_contactus">{{ __('messages.Submit') }}</button>
@@ -188,20 +195,20 @@
                         </label>
                         <ul class="footer_follows">
                             <li>
-                                <a target="blank" href="https://www.facebook.com/I-Oasis-103445604916242"><i class="fab fa-facebook-square"></i></a>
+                                <a target="blank" href="https://www.facebook.com/i-Oasis-103445604916242"><i class="fab fa-facebook-square"></i></a>
                             </li>
                             
                             <li>
-                                <a target="blank" href="https://www.instagram.com/ioasis_/?hl=fr"><i class="fab fa-instagram"></i></a>
+                                <a target="blank" href="https://www.instagram.com/ioasis_"><i class="fab fa-instagram"></i></a>
                             </li>  
                             <li>
-                                <a target="blank" href="https://twitter.com/IOasis5"><i class="fab fa-twitter-square"></i></a>
+                                <a target="blank" href="https://www.pinterest.fr/ioasispro"><i class="fab fa-pinterest-square"></i></a>
                             </li>
                             <li>
-                                <a target="blank" href="#"><i class="fab fa-youtube"></i></a>
+                                <a target="blank" href="https://www.youtube.com/channel/UC3ZhmVYtNJd-4fUlPB2JXXQ"><i class="fab fa-youtube"></i></a>
                             </li>
                             <li>
-                                <a target="blank" href="https://www.linkedin.com/in/i-oasis-2564101ba/"><i class="fab fa-linkedin"></i></a>
+                                <a target="blank" href="https://www.linkedin.com/company/53391230"><i class="fab fa-linkedin"></i></a>
                             </li>                     
                         </ul>
                     </div>
@@ -223,6 +230,9 @@
             </div>            
         </div>
     </footer>
+    <div class="" id="loading">
+        <div class="lds-ring"><div></div><div></div><div></div><div></div>
+    </div>
     <div class="modal fade" id="mobileMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -336,7 +346,38 @@
             $(".changeLang").change(function(){
                 window.location.href = url + "?lang="+ $(this).val();
             });
-      
+            $(".btn_contactus").click(function(){
+                var is_valid = true;
+                $(".form_contact .required").each(function () {
+                    if($(this).val()=="")
+                    {
+                        is_valid = false;                        
+                        $(this).addClass("alert-border");
+                    }                    
+                });
+                if(is_valid)
+                {
+                    var data = $(".form_contact").serialize();
+                    $("#loading").css("display","block");          
+                    $.ajax({
+                        url: "/api/contact",
+                        data: data,
+                        dataType: "json",
+                        type: "post",              
+                        success: function(response){                 
+                            $("#loading").css("display","none");                              
+                        },
+                        error: function(response){
+                            $("#loading").css("display","none");
+                        }
+                    });           
+                }
+                else
+                {
+                    return false;
+                }
+            });
+            
         </script>
 </body>
 </html>

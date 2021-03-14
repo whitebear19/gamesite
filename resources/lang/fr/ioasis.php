@@ -27,8 +27,9 @@ return [
     'Expiration Month' => 'mois d`expiration',
     'Expiration Year' => 'Année d`expiration',
     'Please correct the errors and try again' => 'Veuillez corriger les erreurs et essayer encore',
-    'Pay Now' => 'Payez maintenant',    
+    'Pay Now' => 'Payer',    
     'Please correct the errors and try again' => 'Veuillez corriger les erreurs et réessayer',
     'Before proceeding, please check your email for a verification link. If you did not receive the email,' => 'Avant de continuer, veuillez vérifier votre e-mail pour un lien de vérification. Si vous n`avez pas reçu l`e-mail,',
     'click here to request another' => 'cliquez ici pour en demander un autre',
+    'main' => 'principal',
 ];

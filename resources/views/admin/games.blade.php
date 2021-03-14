@@ -129,19 +129,15 @@
                                     </div>
                                     <div class="col-md-8">
                                       <select multiple="multiple" name="" placeholder="Select Language" class="SlectBox required form-control">
-                                        <option value="English(United Status)">English</option>
-                                        <option value="Chiness(Simplified)">Chinese(Simplified)</option>
-                                        <option value="Chiness(Traditional)">Chinese(Traditional)</option>
-                                        <option value="French(France)">French(France)</option>
-                                        <option value="German">German</option>
-                                        <option value="Italian">Italian</option>
-                                        <option value="Japanese">Japanese</option>
-                                        <option value="Korean(South Korea)">Korean(South Korea)</option>
-                                        <option value="Russian">Russian</option>
-                                        <option value="Spanish">Spanish</option>
+                                        <option value="{{ __('lang.English') }}">{{ __('lang.English') }}</option>
+                                        <option value="{{ __('lang.French') }}">{{ __('lang.French') }}</option>
+                                        <option value="{{ __('lang.Chiness') }}">{{ __('lang.Chiness') }}</option>                                        
+                                        <option value="{{ __('lang.German') }}">{{ __('lang.German') }}</option>
+                                        <option value="{{ __('lang.Italian') }}">{{ __('lang.Italian') }}</option>
+                                        <option value="{{ __('lang.Japanese') }}">{{ __('lang.Japanese') }}</option>                                        
+                                        <option value="{{ __('lang.Russian') }}">{{ __('lang.Russian') }}</option>
+                                        <option value="{{ __('lang.Spanish') }}">{{ __('lang.Spanish') }}</option>
                                       </select>
-                                      
-                                      
                                     </div>
                                   </div>
                                   <div class="language_area" style="display: none;">

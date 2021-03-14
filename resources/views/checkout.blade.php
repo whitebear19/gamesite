@@ -1,5 +1,13 @@
 @extends('layouts.base')
 
+@php
+    $domain = " | i-oasis";
+    $title = __('messages.Check Out').$domain;
+@endphp
+@section('title', $title)
+@section('meta_keywords', $title)
+@section('meta_description', $title)
+
 @section('content')
 <div class="">
     <div class="main">   
@@ -31,7 +39,7 @@
                                     </div>
                                     <div class="checkout_footer">
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now btn_pay_addcart" data-price="0">Pay Now €<span class="price"></span> </button>
+                                            <button type="button" class="btn btn_plan btn_subscribe_now btn_pay_addcart" data-price="0">{{ __('ioasis.Pay Now') }} €<span class="price"></span> </button>
                                         </div>    
                                     </div>
                                                                    
@@ -44,7 +52,7 @@
                                     </div>
                                     <div class="checkout_footer">
                                         <div class="text-center mt-3 mb-3">
-                                            <button type="button" class="btn btn_plan btn_subscribe_now btn_pay_addcart" data-price="0">Pay Now €<span class="price"></span> </button>
+                                            <button type="button" class="btn btn_plan btn_subscribe_now btn_pay_addcart" data-price="0">{{ __('ioasis.Pay Now') }} €<span class="price"></span> </button>
                                         </div>    
                                     </div>
                                                                 

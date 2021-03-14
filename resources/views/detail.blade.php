@@ -1,5 +1,12 @@
 @extends('layouts.base')
-
+@php
+    $domain = " | i-oasis";
+    $title = $game->title.$domain;
+    $desc = $game->description.$domain;
+@endphp
+@section('title', $title)
+@section('meta_keywords', $title)
+@section('meta_description', $desc)
 @section('content')
 <div class="">
     <div class="banner">   

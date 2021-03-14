@@ -837,8 +837,9 @@ table{
 .inner_area{
     position: absolute;
     bottom: 10px;
-    left: calc(50% - 320px);
+    left: calc(50% - 417px);
     text-align: center;
+    width: 834px;
 }
 .inner_area_txt{
     font-weight: 600;letter-spacing: 1.2px;color: #ffffff;font-size: 40px;
@@ -1126,6 +1127,55 @@ a.btn_game_subscribe {
 .alert-border{
     border-color: tomato;
 }
+/* ---------css_loading-------- */
+#loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+    z-index: 99;
+  }
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top:200px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #009900 transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  /* ---------------------------------------- */
 /* ----------------Responsive--------------------------- */
 @media only screen and (max-width: 997px) {
     .site_logo {

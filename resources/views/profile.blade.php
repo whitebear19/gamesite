@@ -1,5 +1,13 @@
 @extends('layouts.base')
 
+@php
+    $domain = " | i-oasis";
+    $title = Auth::user()->name.$domain;
+@endphp
+@section('title', $title)
+@section('meta_keywords', $title)
+@section('meta_description', $title)
+
 @section('content')
 <div class="">
     <div class="main">       

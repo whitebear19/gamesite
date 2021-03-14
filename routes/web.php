@@ -86,6 +86,7 @@ Route::post('/create_user','CompanyController@create_user');
 Route::post('/update_userinfo','HomeController@update_userinfo');
 
 Route::post('/update_password','HomeController@update_password');
+Route::post('/api/contact','HomeController@contact');
 
 
 

@@ -11,5 +11,6 @@ return [
     'Play' => 'Play',
     'No game registered yet' => 'No game registered yet',
     'GENRE' => 'GENRE',
-    'MOST POPULAR' => 'MOST POPULAR',    
+    'MOST POPULAR' => 'MOST POPULAR',  
+    'Home' => 'Home',     
 ];

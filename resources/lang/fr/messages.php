@@ -5,8 +5,8 @@ return [
     'Subscribe now' => 'Abonnez-vous maintenant',
     'Training' => 'Formation',
     'Library' => 'Bibliothèque',
-    'Check Out' => 'Check-out',
-    'Cart is empty' => 'Le chariot est vide',
+    'Check Out' => 'Se déconnecter',
+    'Cart is empty' => 'Le panier…',
     'Sign In' => 'S’identifier',
     'Dashboard' => 'Tableau de bord',
     'Logout' => 'Se déconnecter',
@@ -23,4 +23,5 @@ return [
 
     'How do you want to use i-Oasis?' => 'Comment souhaitez-vous utiliser i-Oasis?',
     'Search' => 'Rechercher',
+    'Confirm' => 'Confirmer',
 ];

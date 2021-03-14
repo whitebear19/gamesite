@@ -5,9 +5,10 @@ return [
     'HEADSET' => 'CASQUES VR',
     'results' => 'résultats',
     'Sort by' => 'Trier par',
-    'New Releases' => 'NOUVEAUTéS',
-    'Play' => 'Jouer',
+    'New Releases' => 'NOUVEAUTES',
+    'Play' => 'S’entraîner',
     'Name A-Z' => 'Nom A-Z',
     'Name Price High to Low' => 'Prix bas-élevé',
     'Name Price Low to High' => 'Prix élevé-bas',
+    'Games' => 'Jeux',
 ];
